@@ -1,0 +1,158 @@
+AnimeGrid Software Design
+
+This design outlines a web application where users guess anime titles based on a grid of clues, such as voice actors, studios, genres, or release years.
+
+---
+Core Features
+---
+
+* Daily Grid: A new 3x3 grid of clues is presented each day.
+* Guessing: Users type in anime titles for each cell.
+* Validation: Guesses are checked against a database.
+* Limited Guesses: Users have a limited number of guesses (e.g., 9 total).
+* Revealing Answers: After all guesses are used or the grid is solved, the correct answers are shown.
+* Stats/History: Users can see their past performance (streaks, win percentage).
+* Sharing: Users can share their results on social media.
+
+---
+Architecture Overview
+---
+
+The system will consist of three main parts:
+
+1.  Frontend (Svelte): Handles user interaction, displays the grid and clues, and communicates with the backend.
+2.  Backend (Python Flask): Manages game logic, serves grid data, validates guesses, and interfaces with the anime database/APIs.
+3.  Data Sources (APIs/Database): Provides anime information (titles, studios, voice actors, genres, release dates, etc.) and stores daily grid configurations.
+
+Visual Representation (Mermaid Diagram Description):
+A graph shows "User Browser (Svelte Frontend)" sending HTTP Requests to "Python Flask Backend".
+The "Python Flask Backend" sends Queries to and receives Data from "Anime Data API/Database".
+The "Python Flask Backend" sends JSON Responses back to the "User Browser (Svelte Frontend)".
+
+---
+Frontend Design (Svelte)
+---
+
+* Components:
+    * Grid.svelte: Displays the 3x3 grid and manages individual cell states.
+    * Cell.svelte: Represents a single cell in the grid, displaying clues and input fields.
+    * GuessInput.svelte: An auto-completing input field for guessing anime titles.
+    * StatsModal.svelte: Displays user statistics.
+    * HowToPlayModal.svelte: Explains the game rules.
+    * ResultsModal.svelte: Shows the results after a game ends.
+    * ShareButton.svelte: Allows users to share their results.
+* State Management: Svelte stores will be used to manage global state like current guesses, remaining guesses, game status (playing, won, lost), and daily grid data.
+* Routing (Optional, for static pages like "About" or "Privacy"): svelte-routing or a similar library.
+* Styling: Tailwind CSS or standard CSS with SCSS.
+
+User Flow:
+
+1.  User visits the site.
+2.  Frontend fetches the daily grid data from the backend.
+3.  The Grid.svelte component renders the clues.
+4.  User clicks on a cell and types an anime guess into GuessInput.svelte.
+5.  As the user types, GuessInput.svelte can fetch autocomplete suggestions from the backend (optional, to improve UX).
+6.  On submitting a guess, the frontend sends it to the backend for validation.
+7.  Backend responds with correct/incorrect.
+8.  Frontend updates the cell's state (e.g., shows the correct anime poster if correct, marks as incorrect).
+9.  Game ends when all cells are correct or guesses run out.
+10. ResultsModal.svelte is shown.
+
+---
+Backend Design (Python Flask)
+---
+
+* API Endpoints:
+    * GET /api/daily_grid:
+        * Returns the clues (e.g., {row1: "Studio Ghibli", col1: "Female Protagonist"}) and potentially a unique ID for the day's grid.
+        * Logic: Generates or retrieves the pre-defined grid for the current day.
+    * POST /api/guess:
+        * Request Body: { "gridId": "YYYY-MM-DD", "row": 0, "col": 1, "anime_guess": "Kiki's Delivery Service" }
+        * Response: { "correct": true, "anime_info": { "title": "Kiki's Delivery Service", "poster_url": "...", "details": {...} } } or { "correct": false }
+        * Logic: Validates the guess against the anime database for the given clues.
+    * GET /api/anime/search?q=<query> (Optional, for autocomplete):
+        * Request: User types "Kiki"
+        * Response: [{ "id": 123, "title": "Kiki's Delivery Service" }, ...]
+        * Logic: Searches the anime database for titles matching the query.
+    * GET /api/stats (If implementing user accounts):
+        * Requires authentication.
+        * Response: User's game statistics.
+* Game Logic:
+    * Grid Generation: This is a crucial part. Grids need to be solvable and interesting.
+        * Option 1 (Curated): Manually create and store daily grids in a database. This ensures quality but requires ongoing effort.
+        * Option 2 (Algorithmic): Develop an algorithm to generate grids based on anime data. This is more complex but automated. It would involve selecting categories (e.g., Studio, Year, Genre, Voice Actor) and then finding anime that intersect these categories.
+    * Answer Validation: Compare the user's guess (and its associated metadata like studio, year, etc.) with the criteria for that specific cell.
+* Database (Optional but Recommended):
+    * PostgreSQL or SQLite (for simplicity if user accounts aren't a primary early feature).
+    * Models:
+        * DailyGrid: Stores the date, clue categories, and correct anime IDs for each cell.
+        * Anime: (Could be populated from an API or a local dump) Stores anime ID, title, studios, genres, release year, voice actors, poster URLs, etc.
+        * UserStats (If accounts are implemented): User ID, games played, wins, current streak, max streak.
+* Caching: Use Flask-Caching or Redis to cache API responses (especially anime data) to reduce load on external APIs and speed up responses.
+
+---
+Relevant APIs & Data Sources
+---
+
+1.  Jikan API (MyAnimeList Unofficial API):
+    * Website: https://jikan.moe/
+    * Pros: Free, extensive data on anime (titles, studios, genres, characters, staff, voice actors, ratings, synopsis, images). Good for fetching most of the required information.
+    * Cons: Rate limits. It's an unofficial API, so stability could be a concern long-term, though it's widely used.
+    * Endpoints to use:
+        * /anime/{id}: Get details for a specific anime.
+        * /anime/{id}/characters: Get characters and their voice actors.
+        * /anime/{id}/staff: Get staff (directors, producers).
+        * /anime?q={query}: Search for anime.
+        * /genres/anime: Get list of genres.
+        * /producers (for studios, though "producers" in MAL can also mean licensors, so careful filtering might be needed): Get list of studios.
+
+2.  AniList API:
+    * Website: https://anilist.gitbook.io/anilist-apiv2-docs
+    * Pros: Official, uses GraphQL (flexible queries), very comprehensive, well-documented, supports authentication for user-specific data (though not strictly needed for this game's core).
+    * Cons: GraphQL has a steeper learning curve than REST if you're unfamiliar. Rate limits apply.
+    * Queries to use: Flexible queries to fetch anime by various criteria (studio, year, genre, tags, staff, characters, voice actors).
+
+3.  Kitsu API:
+    * Website: https://kitsu.docs.apiary.io/
+    * Pros: JSON:API compliant, good data coverage.
+    * Cons: Rate limits.
+    * Endpoints: Similar to Jikan for fetching anime details, searching, and getting related data.
+
+Recommendation:
+
+* Start with the Jikan API for its simplicity (RESTful) and broad data coverage. It's generally sufficient for this type of game.
+* Consider AniList API if you need more complex relationships or prefer GraphQL.
+* Crucial: You'll likely need to build your own curated database or a way to process and store data from these APIs. Relying solely on live API calls for grid generation and answer validation can be slow and hit rate limits quickly.
+    * A script could periodically fetch and update anime data into your local database.
+    * This local database would then be the primary source for generating daily grids and validating answers quickly.
+
+---
+Data Flow Example (Guessing an Anime)
+---
+
+1.  User: Types "Spirited Away" in a cell defined by "Studio Ghibli" (row clue) and "2001 Release" (column clue).
+2.  Svelte Frontend: Sends POST /api/guess with { "rowClue": "Studio Ghibli", "colClue": "2001 Release", "anime_guess": "Spirited Away" }. (Alternatively, send cell coordinates and let backend look up clues).
+3.  Flask Backend:
+    a.  Receives the guess.
+    b.  Looks up "Spirited Away" in its local anime database (or via an API call if not locally stored/cached).
+    c.  Retrieves the metadata for "Spirited Away": Studio is "Studio Ghibli", Release Year is "2001".
+    d.  Compares this metadata with the cell's clues.
+    e.  Determines the guess is correct.
+    f.  Sends back {"correct": true, "anime_info": {"title": "Spirited Away", "poster_url": "...", ...}}.
+4.  Svelte Frontend:
+    a.  Receives the response.
+    b.  Updates the cell to show "Spirited Away" and its poster.
+    c.  Decrements remaining guesses (if it was a fresh correct guess for that cell).
+
+---
+Key Considerations & Challenges
+---
+
+* Grid Quality and Uniqueness: Ensuring grids are solvable but not too easy/hard and that there's a unique (or at least primary) correct anime for each cell based on the intersecting clues. This is the hardest part. You might need to:
+    * Define specific categories for rows/columns (e.g., Decade, Genre, Studio, Character Archetype, Voice Actor).
+    * Write complex queries against your anime data to find intersections.
+    * Example Cell: Row = "Studio Madhouse", Column = "Aired in 2000s". The backend needs to find an anime that fits both.
+* Data Consistency & Synonyms: Anime titles can have variations (English, Romaji, Japanese). Studios might have slightly different names across APIs. You'll need a strategy for normalizing this data.
+* Rate Limiting: Be mindful of external API rate limits. Aggressively cache data and consider a local database mirror.
+* Scalability (Future): If the site becomes popular, ensure your backend and database can handle the load.
+* Mobile Responsiveness: Design the Svelte frontend to work well on all screen sizes.
