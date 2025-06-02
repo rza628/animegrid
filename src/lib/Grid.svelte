@@ -1,9 +1,38 @@
 <script>
+  import { onMount } from "svelte";
   let width = window.innerWidth;
   let height = window.innerHeight;
   let guessesLeft = $state(9);
-</script>
+  let character = $state(null);
+  let errormessage = $state(null);
 
+  onMount(async () => {
+    try {
+      // Don’t call jikanjs.loadCharacter(...)—just use the raw URL:
+      const res = await fetch("https://api.jikan.moe/v4/characters/118737");
+      if (!res.ok) {
+        const err = await res.json();
+        errormessage = err?.message || "Unknown error from Jikan API";
+      } else {
+        const json = await res.json();
+        character = json.data; // Jikan wraps the character in `data`
+      }
+    } catch (e) {
+      errormessage = e.message;
+    }
+  });
+</script>
+{#if errormessage}
+  <p style="color: red">{errormessage}</p>
+{:else if character}
+    <div class="character-card">
+      <img src="{character.images.jpg.image_url}" alt="{character.name}" />
+      <h2>{character.name}</h2>
+      <p>{@html character.about}</p>
+    </div>
+{:else}
+  <p>Loading character…</p>
+{/if}
 <div class="main">
   <div class="acrossGrid">
     <div class="empty"></div>
@@ -35,6 +64,8 @@
     <div class="guess">Guesses Left: {guessesLeft}</div>
   </div>
 </div>
+
+
 
 <style>
   .grid {
