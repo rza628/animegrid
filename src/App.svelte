@@ -1,7 +1,7 @@
 <script>
   import Grid from "./lib/Grid.svelte";
   import Modal from "./lib/Modal.svelte";
-
+</script>
 
 <header>
   <h1 class="Title">Anime Grid</h1>
@@ -11,15 +11,11 @@
   <h1 class="Footer">Ry Ly</h1>
 </footer>
 
-
 <main>
   <div>
     <Grid />
   </div>
 </main>
-
-<style>
-  .Title {
 
 <style>
   .character-card {
@@ -33,7 +29,7 @@
     max-width: 100%;
     border-radius: 4px;
   }
-  .Title{
+  .Title {
     position: fixed;
     left: 0;
     top: 0;
