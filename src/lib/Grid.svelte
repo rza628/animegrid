@@ -7,21 +7,28 @@
   let guessesLeft = $state(9);
   let character = $state(null);
   let errormessage = $state(null);
-  let animeTitles = $state();
+  let animeTitles = $state([]);
 
   let showModal = $state(false);
 
   onMount(async () => {
     try {
       // Don’t call jikanjs.loadCharacter(...)—just use the raw URL:
-      const res = await fetch("http://127.0.0.1:5000/api/animetitles");
-      if (!res.ok) {
-        const err = await res.json();
-        errormessage = err?.message || "Unknown error from Jikan API";
-      } else {
-        const json = await res.json();
-        animeTitles = json["titles"]; // Jikan wraps the character in `data`
-      }
+      const res = await fetch("src/assets/anime_titles_nodupes.csv")
+        .then((res) => res.text())
+        .then((text) => {
+          const list = text.split("\r\n");
+          list.map((entry) => {
+            const split = entry.split(",");
+            const title = split[0],
+              id = split[1];
+            if (title && id) {
+              animeTitles.push({ title: title, id: id });
+            }
+          });
+        });
+
+      // animeTitles = json["titles"]; // Jikan wraps the character in `data`
     } catch (e) {
       errormessage = e.message;
     }

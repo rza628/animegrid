@@ -2,7 +2,8 @@
 
 # How to run
 
-go into python folder then run flask flask --app server run
+go into python folder then run flask: flask --app server run
+do flask --app server --debug run so you wont have to close and rerun server
 
 then go main folder in separate terminal and run npm run dev
 
