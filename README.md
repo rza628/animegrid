@@ -1,5 +1,11 @@
 # Svelte + Vite
 
+# How to run
+
+go into python folder then run flask flask --app server run
+
+then go main folder in separate terminal and run npm run dev
+
 This template should help get you started developing with Svelte in Vite.
 
 ## Recommended IDE Setup
@@ -42,6 +48,6 @@ If you have state that's important to retain within a component, consider creati
 ```js
 // store.js
 // An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+import { writable } from "svelte/store";
+export default writable(0);
 ```
