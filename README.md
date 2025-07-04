@@ -2,6 +2,8 @@
 
 # How to run
 
+CURRENT VERSION : fetches csv of all the titles and does it all on the frontend, no need for python flask server (prolly use it for other things later in development), for now just run : npm run dev
+
 go into python folder then run flask: flask --app server run
 do flask --app server --debug run so you wont have to close and rerun server
 
