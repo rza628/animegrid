@@ -1,12 +1,37 @@
 <script>
   import Search from "./Search.svelte";
-  let { showModal = $bindable(), animeTitles } = $props();
-
+  let {
+    showModal = $bindable(),
+    animeTitles,
+    value = $bindable(),
+    tile = $bindable(),
+    guessedTile = $bindable(),
+    guessesLeft = $bindable(),
+  } = $props();
+  let guessID = $state();
   let dialog = $state(); // HTMLDialogElement
 
   $effect(() => {
     if (showModal) dialog.showModal();
   });
+
+  async function handleGuess() {
+    //get image url from mal api
+    try {
+      console.log(guessID);
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime/${parseInt(guessID)}`
+      );
+      const data = await response.json();
+
+      value = data["data"]["images"]["webp"]["image_url"];
+      tile = true;
+      guessesLeft -= 1;
+      dialog.close();
+    } catch (e) {
+      console.log(e.message);
+    }
+  }
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
@@ -19,8 +44,9 @@
 >
   <div>
     <!-- svelte-ignore a11y_autofocus -->
-    <Search {animeTitles} />
+    <Search {animeTitles} bind:value={guessID} />
   </div>
+  <button onclick={() => handleGuess()}>Submit Guess</button>
   <button onclick={() => dialog.close()}>close modal</button>
 </dialog>
 
