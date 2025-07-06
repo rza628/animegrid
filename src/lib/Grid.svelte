@@ -97,13 +97,13 @@
   <div class="acrossGrid">
     <div class="empty"></div>
     <button class="acrossTopic" aria-label="Close">topic 1</button>
-    <button class="acrossTopic" aria-label="Close">topic 1</button>
-    <button class="acrossTopic" aria-label="Close">topic 1</button>
+    <button class="acrossTopic" aria-label="Close">topic 2</button>
+    <button class="acrossTopic" aria-label="Close">topic 3</button>
   </div>
   <div class="rows">
     <div>
       <div class="grid">
-        <button class="downTopic" aria-label="Close">topic 1</button>
+        <button class="downTopic" aria-label="Close">topic 4</button>
         <!-- TILE 1 -->
         {#if tile1}
           <img
@@ -154,7 +154,7 @@
         {/if}
       </div>
       <div class="grid">
-        <button class="downTopic" aria-label="Close">topic 1</button>
+        <button class="downTopic" aria-label="Close">topic 5</button>
         <!-- TILE 4 -->
         {#if tile4}
           <img
@@ -205,7 +205,7 @@
         {/if}
       </div>
       <div class="grid">
-        <button class="downTopic" aria-label="Close">topic 1</button>
+        <button class="downTopic" aria-label="Close">topic 6</button>
         <!-- TILE 7 -->
         {#if tile7}
           <img
