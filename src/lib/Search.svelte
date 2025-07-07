@@ -1,7 +1,6 @@
 <script>
-  let searchTerm = $state("");
   let guess = $state("");
-  let { animeTitles, value = $bindable() } = $props();
+  let { animeTitles, value = $bindable(), searchTerm = $bindable() } = $props();
   let typingAgain = $state(true);
 
   let filteredTitles = $derived(
