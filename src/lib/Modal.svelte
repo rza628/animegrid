@@ -9,6 +9,7 @@
     guessesLeft = $bindable(),
   } = $props();
   let guessID = $state();
+  let searchTerm = $state("");
   let dialog = $state(); // HTMLDialogElement
 
   $effect(() => {
@@ -27,6 +28,7 @@
       value = data["data"]["images"]["webp"]["image_url"];
       tile = true;
       guessesLeft -= 1;
+      searchTerm = "";
       dialog.close();
     } catch (e) {
       console.log(e.message);
@@ -44,7 +46,7 @@
 >
   <div>
     <!-- svelte-ignore a11y_autofocus -->
-    <Search {animeTitles} bind:value={guessID} />
+    <Search {animeTitles} bind:value={guessID} bind:searchTerm />
   </div>
   <button onclick={() => handleGuess()}>Submit Guess</button>
   <button onclick={() => dialog.close()}>close modal</button>
