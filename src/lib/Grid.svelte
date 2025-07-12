@@ -15,6 +15,8 @@
   let showModal8 = $state(false);
   let showModal9 = $state(false);
 
+  let selectedTile = $state(0);
+
   let tile1 = $state(false);
   let tile2 = $state(false);
   let tile3 = $state(false);
@@ -37,20 +39,11 @@
   onMount(async () => {
     try {
       // Don’t call jikanjs.loadCharacter(...)—just use the raw URL:
-      const res = await fetch("src/assets/anime_titles_nodupes.csv")
-        .then((res) => res.text())
-        .then((text) => {
-          const list = text.split("\r\n");
-          list.map((entry) => {
-            const split = entry.split(",");
-            const title = split[0],
-              id = split[1];
-            if (title && id) {
-              animeTitles.push({ title: title, id: id });
-            }
-          });
-        });
+      const res = await fetch("http://127.0.0.1:5000/api/animetitles");
 
+      const data = await res.json();
+
+      animeTitles = data["titles"];
       // animeTitles = json["titles"]; // Jikan wraps the character in `data`
     } catch (e) {
       errormessage = e.message;
@@ -94,6 +87,7 @@
   <p>Loading character…</p>
 {/if} -->
 <div class="main">
+  <div>Selected Tile : {selectedTile}</div>
   <div class="acrossGrid">
     <div class="empty"></div>
     <button class="acrossTopic" aria-label="Close">topic 1</button>
@@ -116,7 +110,10 @@
             class="cell1"
             aria-label="Close"
             onclick={() => {
-              showModal1 = true;
+              {
+                selectedTile = 1;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -132,7 +129,10 @@
             class="cell2"
             aria-label="Close"
             onclick={() => {
-              showModal2 = true;
+              {
+                selectedTile = 2;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -148,7 +148,10 @@
             class="cell3"
             aria-label="Close"
             onclick={() => {
-              showModal3 = true;
+              {
+                selectedTile = 3;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -167,7 +170,10 @@
             class="cell4"
             aria-label="Close"
             onclick={() => {
-              showModal4 = true;
+              {
+                selectedTile = 4;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -183,7 +189,10 @@
             class="cell5"
             aria-label="Close"
             onclick={() => {
-              showModal5 = true;
+              {
+                selectedTile = 5;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -199,7 +208,10 @@
             class="cell6"
             aria-label="Close"
             onclick={() => {
-              showModal6 = true;
+              {
+                selectedTile = 6;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -218,7 +230,10 @@
             class="cell7"
             aria-label="Close"
             onclick={() => {
-              showModal7 = true;
+              {
+                selectedTile = 7;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -235,7 +250,10 @@
             class="cell8"
             aria-label="Close"
             onclick={() => {
-              showModal8 = true;
+              {
+                selectedTile = 8;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -251,7 +269,10 @@
             class="cell9"
             aria-label="Close"
             onclick={() => {
-              showModal9 = true;
+              {
+                selectedTile = 9;
+                showModal1 = true;
+              }
             }}
           ></button>
         {/if}
@@ -264,6 +285,7 @@
   <Modal
     bind:showModal={showModal1}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL1}
     bind:tile={tile1}
     bind:guessesLeft
@@ -271,6 +293,7 @@
   <Modal
     bind:showModal={showModal2}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL2}
     bind:tile={tile2}
     bind:guessesLeft
@@ -278,6 +301,7 @@
   <Modal
     bind:showModal={showModal3}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL3}
     bind:tile={tile3}
     bind:guessesLeft
@@ -285,6 +309,7 @@
   <Modal
     bind:showModal={showModal4}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL4}
     bind:tile={tile4}
     bind:guessesLeft
@@ -292,6 +317,7 @@
   <Modal
     bind:showModal={showModal5}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL5}
     bind:tile={tile5}
     bind:guessesLeft
@@ -299,6 +325,7 @@
   <Modal
     bind:showModal={showModal6}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL6}
     bind:tile={tile6}
     bind:guessesLeft
@@ -306,6 +333,7 @@
   <Modal
     bind:showModal={showModal7}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL7}
     bind:tile={tile7}
     bind:guessesLeft
@@ -313,6 +341,7 @@
   <Modal
     bind:showModal={showModal8}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL8}
     bind:tile={tile8}
     bind:guessesLeft
@@ -320,6 +349,7 @@
   <Modal
     bind:showModal={showModal9}
     {animeTitles}
+    {selectedTile}
     bind:value={imageURL9}
     bind:tile={tile9}
     bind:guessesLeft
