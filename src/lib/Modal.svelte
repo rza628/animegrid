@@ -4,12 +4,26 @@
     showModal = $bindable(),
     animeTitles,
     selectedTile,
+    categories,
     value = $bindable(),
     tile = $bindable(),
     guessesLeft = $bindable(),
   } = $props();
   let guessID = $state();
   let searchTerm = $state("");
+
+  const checkCat = $derived({
+    1: [categories[0], categories[3]],
+    2: [categories[1], categories[3]],
+    3: [categories[2], categories[3]],
+    4: [categories[0], categories[4]],
+    5: [categories[1], categories[4]],
+    6: [categories[2], categories[4]],
+    7: [categories[0], categories[5]],
+    8: [categories[1], categories[5]],
+    9: [categories[2], categories[5]],
+  });
+
   let dialog = $state(); // HTMLDialogElement
 
   $effect(() => {
@@ -23,12 +37,31 @@
         `https://api.jikan.moe/v4/anime/${parseInt(guessID)}`
       );
       const data = await response.json();
+      const guessGenres = [
+        ...data["data"]["genres"],
+        ...data["data"]["explicit_genres"],
+        ...data["data"]["themes"],
+        ...data["data"]["demographics"],
+      ].map((genre) => genre["name"]);
 
-      value = data["data"]["images"]["webp"]["image_url"];
-      tile = true;
-      guessesLeft -= 1;
-      searchTerm = "";
-      dialog.close();
+      const cat1 = checkCat[selectedTile][0];
+      const cat2 = checkCat[selectedTile][1];
+      console.log("guess genres", guessGenres);
+      console.log("categories", cat1, cat2);
+      //check the guess, correct
+      if (guessGenres.includes(cat1) && guessGenres.includes(cat2)) {
+        value = data["data"]["images"]["webp"]["image_url"];
+        tile = true;
+        guessesLeft -= 1;
+        searchTerm = "";
+        dialog.close();
+      } else {
+        value = "";
+        tile = false;
+        guessesLeft -= 1;
+        searchTerm = "";
+        dialog.close();
+      }
     } catch (e) {
       console.log(e.message);
     }

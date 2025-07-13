@@ -4,6 +4,7 @@
   let guessesLeft = $state(9);
   let errormessage = $state(null);
   let animeTitles = $state([]);
+  let categories = $state([]);
 
   let showModal1 = $state(false);
   let showModal2 = $state(false);
@@ -40,10 +41,13 @@
     try {
       // Don’t call jikanjs.loadCharacter(...)—just use the raw URL:
       const res = await fetch("http://127.0.0.1:5000/api/animetitles");
-
       const data = await res.json();
 
       animeTitles = data["titles"];
+
+      const res2 = await fetch("http://127.0.0.1:5000/api/categories");
+      const data2 = await res2.json();
+      categories = data2["categories"];
       // animeTitles = json["titles"]; // Jikan wraps the character in `data`
     } catch (e) {
       errormessage = e.message;
@@ -90,14 +94,14 @@
   <div>Selected Tile : {selectedTile}</div>
   <div class="acrossGrid">
     <div class="empty"></div>
-    <button class="acrossTopic" aria-label="Close">topic 1</button>
-    <button class="acrossTopic" aria-label="Close">topic 2</button>
-    <button class="acrossTopic" aria-label="Close">topic 3</button>
+    <button class="acrossTopic" aria-label="Close">{categories[0]}</button>
+    <button class="acrossTopic" aria-label="Close">{categories[1]}</button>
+    <button class="acrossTopic" aria-label="Close">{categories[2]}</button>
   </div>
   <div class="rows">
     <div>
       <div class="grid">
-        <button class="downTopic" aria-label="Close">topic 4</button>
+        <button class="downTopic" aria-label="Close">{categories[3]}</button>
         <!-- TILE 1 -->
         {#if tile1}
           <img
@@ -131,7 +135,7 @@
             onclick={() => {
               {
                 selectedTile = 2;
-                showModal1 = true;
+                showModal2 = true;
               }
             }}
           ></button>
@@ -150,14 +154,14 @@
             onclick={() => {
               {
                 selectedTile = 3;
-                showModal1 = true;
+                showModal3 = true;
               }
             }}
           ></button>
         {/if}
       </div>
       <div class="grid">
-        <button class="downTopic" aria-label="Close">topic 5</button>
+        <button class="downTopic" aria-label="Close">{categories[4]}</button>
         <!-- TILE 4 -->
         {#if tile4}
           <img
@@ -172,7 +176,7 @@
             onclick={() => {
               {
                 selectedTile = 4;
-                showModal1 = true;
+                showModal4 = true;
               }
             }}
           ></button>
@@ -191,7 +195,7 @@
             onclick={() => {
               {
                 selectedTile = 5;
-                showModal1 = true;
+                showModal5 = true;
               }
             }}
           ></button>
@@ -210,14 +214,14 @@
             onclick={() => {
               {
                 selectedTile = 6;
-                showModal1 = true;
+                showModal6 = true;
               }
             }}
           ></button>
         {/if}
       </div>
       <div class="grid">
-        <button class="downTopic" aria-label="Close">topic 6</button>
+        <button class="downTopic" aria-label="Close">{categories[5]}</button>
         <!-- TILE 7 -->
         {#if tile7}
           <img
@@ -232,7 +236,7 @@
             onclick={() => {
               {
                 selectedTile = 7;
-                showModal1 = true;
+                showModal7 = true;
               }
             }}
           ></button>
@@ -252,7 +256,7 @@
             onclick={() => {
               {
                 selectedTile = 8;
-                showModal1 = true;
+                showModal8 = true;
               }
             }}
           ></button>
@@ -271,7 +275,7 @@
             onclick={() => {
               {
                 selectedTile = 9;
-                showModal1 = true;
+                showModal9 = true;
               }
             }}
           ></button>
@@ -286,6 +290,7 @@
     bind:showModal={showModal1}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL1}
     bind:tile={tile1}
     bind:guessesLeft
@@ -294,6 +299,7 @@
     bind:showModal={showModal2}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL2}
     bind:tile={tile2}
     bind:guessesLeft
@@ -302,6 +308,7 @@
     bind:showModal={showModal3}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL3}
     bind:tile={tile3}
     bind:guessesLeft
@@ -310,6 +317,7 @@
     bind:showModal={showModal4}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL4}
     bind:tile={tile4}
     bind:guessesLeft
@@ -318,6 +326,7 @@
     bind:showModal={showModal5}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL5}
     bind:tile={tile5}
     bind:guessesLeft
@@ -326,6 +335,7 @@
     bind:showModal={showModal6}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL6}
     bind:tile={tile6}
     bind:guessesLeft
@@ -334,6 +344,7 @@
     bind:showModal={showModal7}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL7}
     bind:tile={tile7}
     bind:guessesLeft
@@ -342,6 +353,7 @@
     bind:showModal={showModal8}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL8}
     bind:tile={tile8}
     bind:guessesLeft
@@ -350,6 +362,7 @@
     bind:showModal={showModal9}
     {animeTitles}
     {selectedTile}
+    {categories}
     bind:value={imageURL9}
     bind:tile={tile9}
     bind:guessesLeft

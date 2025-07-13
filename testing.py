@@ -23,6 +23,23 @@ def apiByPage(page):
     except:
         return None
     #getting title
+
+def genres():
+    url = 'https://api.jikan.moe/v4/genres/anime'
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            return data
+    except:
+        return None
+ 
+data = genres()
+genrelist = []
+for genre in data['data']:
+    genrelist.append({'genre':genre['name']})
+print(genrelist)
+
 """ data = fpl_api()['data'][1]
  
 print(data['title']) """
@@ -51,7 +68,7 @@ for pair in file:
         setNoDupe.add(pair)
         newfile.write(pair + '\n')
 print('done') """
-
+""" 
 l1 = open('./anime_titles_nodupes.csv', 'r', encoding='utf-8').read().strip().split('\n')
 l2 = open('./new_anime_titles_delayed_call.csv', 'r', encoding='utf-8').read().strip().split('\n')
 l3 = open('./new_anime_titles.csv', 'r', encoding='utf-8').read().strip().split('\n')
@@ -65,7 +82,7 @@ for list in [l1, l2, l3]:
             check.add(pair)
             file.write(pair + '\n')
         else:
-            continue
+            continue """
 
 
 
