@@ -49,8 +49,9 @@
       console.log("guess genres", guessGenres);
       console.log("categories", cat1, cat2);
       //check the guess, correct
-      if (guessGenres.includes(cat1) && guessGenres.includes(cat2)) {
-        value = data["data"]["images"]["webp"]["image_url"];
+      if (true) {
+        /* (guessGenres.includes(cat1) && guessGenres.includes(cat2)) */ value =
+          data["data"]["images"]["webp"]["image_url"];
         tile = true;
         guessesLeft -= 1;
         searchTerm = "";
