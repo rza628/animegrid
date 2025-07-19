@@ -48,10 +48,9 @@
       const cat2 = checkCat[selectedTile][1];
       console.log("guess genres", guessGenres);
       console.log("categories", cat1, cat2);
-      //check the guess, correct
-      if (true) {
-        /* (guessGenres.includes(cat1) && guessGenres.includes(cat2)) */ value =
-          data["data"]["images"]["webp"]["image_url"];
+      //check the guess, correct, replace condition with true if want to test images
+      if (guessGenres.includes(cat1) && guessGenres.includes(cat2)) {
+        value = data["data"]["images"]["webp"]["image_url"];
         tile = true;
         guessesLeft -= 1;
         searchTerm = "";
