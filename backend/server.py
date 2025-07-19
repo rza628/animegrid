@@ -1,5 +1,5 @@
 from flask import Flask, json
-import requests, random
+import requests, random, unicodedata
 from flask_cors import CORS
 
 "flask --app server --debug run"
@@ -50,5 +50,18 @@ def categories():
 
     categories = random.sample(genres, 6)
     message = json.jsonify({"categories": ["Action", "Romance", "Superpower", "Mystery", "Supernatural", "School"]})
+    return message
+
+@app.route('/api/search/<input>')
+def search(input):
+    titles = open("../combined_anime_titles.csv", "r", encoding='utf-8')
+    titles = titles.read().strip().split('\n')
+    filteredTitles = []
+    for entry in titles:
+        split = entry.rsplit(',', 1)
+        title, id = split[0], split[1]
+        if input in title.lower():
+            filteredTitles.append({"title":title, "id":id})
+    message = json.jsonify({'data':filteredTitles})
     return message
 
