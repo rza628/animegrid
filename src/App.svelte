@@ -1,7 +1,7 @@
 <script>
   import Grid from "./lib/GridOld.svelte";
   import Grid2 from "./lib/Grid2.svelte";
-  import Modal from "./lib/Modal.svelte";
+  import Header from "./lib/Header.svelte";
 </script>
 
 <!-- <header>
@@ -12,14 +12,22 @@
   <h1 class="Footer">Ry Ly</h1>
 </footer> -->
 
-<main>
+<div>
+  <div class="top">
+    <Header />
+  </div>
   <div>
     <!-- <Grid /> -->
     <Grid2 />
   </div>
-</main>
+</div>
 
 <style>
+  .top {
+    position: absolute;
+    top: 0;
+    left: 10px;
+  }
   .character-card {
     max-width: 300px;
     border: 1px solid #eee;

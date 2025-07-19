@@ -80,7 +80,10 @@
 </script>
 
 <div class="container">
-  <div></div>
+  <div class="guess">
+    Guesses Left:
+    <p>{guessesLeft}</p>
+  </div>
   <button class="topTopic">{categories[0]}</button>
   <button class="topTopic">{categories[1]}</button>
   <button class="topTopic">{categories[2]}</button>
@@ -213,6 +216,7 @@
       }}
     ></button>
   {/if}
+
   <!-- MODALS -->
   <Modal
     bind:showModal={showModal1}
@@ -297,6 +301,8 @@
   ></Modal>
 </div>
 
+<button class="reset" onclick={() => handleReset()}>Reset Game</button>
+
 <style>
   .container {
     display: grid;
@@ -314,6 +320,7 @@
   .topTopic {
     width: 100px;
     height: 100px;
+    font-size: 15px;
     padding: 0;
     border: none;
     outline: none;
@@ -323,6 +330,7 @@
     width: 100px;
     max-height: 160px;
     padding: 0;
+    font-size: 15px;
     overflow: hidden;
     border: none;
     outline: none;
@@ -335,5 +343,16 @@
     height: 160px;
     text-align: center;
     border-radius: 8px;
+  }
+  .guess {
+    width: 100px;
+    padding: 0;
+  }
+  .reset {
+    height: 75px;
+    width: 150px;
+  }
+  p {
+    font-size: xx-large;
   }
 </style>
