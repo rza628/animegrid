@@ -14,11 +14,17 @@
     typingAgain = false;
   }
   let timer;
-  const debounce = () => {
+  function debounce() {
     typingAgain = true;
     clearTimeout(timer);
-    timer = setTimeout(() => {
-      filteredTitles = animeTitles.filter((title) =>
+    timer = setTimeout(async () => {
+      const res = await fetch(
+        `http://127.0.0.1:5000/api/search/${searchTerm.toLowerCase()}`
+      );
+      const data = await res.json();
+      console.log(data);
+      filteredTitles = data["data"];
+      /* filteredTitles = animeTitles.filter((title) =>
         title["title"]
           .normalize("NFD")
           .replace(/\p{Diacritic}/gu, "")
@@ -29,9 +35,9 @@
               .replace(/\p{Diacritic}/gu, "")
               .toLowerCase()
           )
-      );
+      ); */
     }, 300);
-  };
+  }
 </script>
 
 <form method="post" onsubmit={handleSearch} id="searchbar">

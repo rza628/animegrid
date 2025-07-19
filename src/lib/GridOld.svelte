@@ -381,6 +381,7 @@
     gap: 1px;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
+    text-wrap: wrap;
   }
 
   .rows {

@@ -1,19 +1,21 @@
 <script>
-  import Grid from "./lib/Grid.svelte";
+  import Grid from "./lib/GridOld.svelte";
+  import Grid2 from "./lib/Grid2.svelte";
   import Modal from "./lib/Modal.svelte";
 </script>
 
-<header>
+<!-- <header>
   <h1 class="Title">Anime Grid</h1>
-</header>
+</header> -->
 
-<footer>
+<!-- <footer>
   <h1 class="Footer">Ry Ly</h1>
-</footer>
+</footer> -->
 
 <main>
   <div>
-    <Grid />
+    <!-- <Grid /> -->
+    <Grid2 />
   </div>
 </main>
 
