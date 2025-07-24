@@ -1,13 +1,12 @@
 <script>
   import Search from "./Search.svelte";
   let {
-    value = $bindable(),
     guessesLeft = $bindable(),
+    imageUrl = $bindable(),
     categories,
     gridTile,
   } = $props();
   let showModal = $state(false);
-  let imageUrl = $state("");
   let searchTerm = $state("");
   let guessID = $state("");
 
@@ -56,7 +55,6 @@
         searchTerm = "";
         dialog.close();
       } else {
-        value = "";
         guessesLeft -= 1;
         searchTerm = "";
         dialog.close();
