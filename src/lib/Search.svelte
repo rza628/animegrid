@@ -1,6 +1,5 @@
 <script>
-  let guess = $state("");
-  let { animeTitles, value = $bindable(), searchTerm = $bindable() } = $props();
+  let { value = $bindable(), searchTerm = $bindable() } = $props();
   let typingAgain = $state(true);
   let filteredTitles = $state([]);
 
@@ -24,18 +23,6 @@
       const data = await res.json();
       console.log(data);
       filteredTitles = data["data"];
-      /* filteredTitles = animeTitles.filter((title) =>
-        title["title"]
-          .normalize("NFD")
-          .replace(/\p{Diacritic}/gu, "")
-          .toLowerCase()
-          .includes(
-            searchTerm
-              .normalize("NFD")
-              .replace(/\p{Diacritic}/gu, "")
-              .toLowerCase()
-          )
-      ); */
     }, 300);
   }
 </script>

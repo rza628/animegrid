@@ -49,7 +49,7 @@ def categories():
     genres = [entry['name'] for entry in data]
 
     categories = random.sample(genres, 6)
-    message = json.jsonify({"categories": ["Action", "Romance", "Superpower", "Mystery", "Supernatural", "School"]})
+    message = json.jsonify({"categories": ["Action", "Romance", "Superpower", "Mystery", "Supernatural", "Comedy"]})
     return message
 
 @app.route('/api/search/<input>')
