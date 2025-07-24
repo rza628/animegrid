@@ -1,6 +1,5 @@
 <script>
-  import Grid from "./lib/GridOld.svelte";
-  import Grid2 from "./lib/Grid2.svelte";
+  import Grid from "./lib/Grid.svelte";
   import Header from "./lib/Header.svelte";
 </script>
 
@@ -18,7 +17,7 @@
   </div>
   <div>
     <!-- <Grid /> -->
-    <Grid2 />
+    <Grid />
   </div>
 </div>
 
