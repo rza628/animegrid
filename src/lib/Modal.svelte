@@ -1,27 +1,26 @@
 <script>
+  import { getContext } from "svelte";
   import Search from "./Search.svelte";
-  let {
-    guessesLeft = $bindable(),
-    imageUrl = $bindable(),
-    categories,
-    gridTile,
-  } = $props();
+  let { gridTile } = $props();
   let showModal = $state(false);
   let searchTerm = $state("");
   let guessID = $state("");
 
   let dialog = $state(); // HTMLDialogElement
+  let gameContext = getContext("gameContext");
+
+  console.time("test");
 
   const checkCat = $derived({
-    1: [categories[0], categories[3]],
-    2: [categories[1], categories[3]],
-    3: [categories[2], categories[3]],
-    4: [categories[0], categories[4]],
-    5: [categories[1], categories[4]],
-    6: [categories[2], categories[4]],
-    7: [categories[0], categories[5]],
-    8: [categories[1], categories[5]],
-    9: [categories[2], categories[5]],
+    1: [gameContext.categories[0], gameContext.categories[3]],
+    2: [gameContext.categories[1], gameContext.categories[3]],
+    3: [gameContext.categories[2], gameContext.categories[3]],
+    4: [gameContext.categories[0], gameContext.categories[4]],
+    5: [gameContext.categories[1], gameContext.categories[4]],
+    6: [gameContext.categories[2], gameContext.categories[4]],
+    7: [gameContext.categories[0], gameContext.categories[5]],
+    8: [gameContext.categories[1], gameContext.categories[5]],
+    9: [gameContext.categories[2], gameContext.categories[5]],
   });
 
   $effect(() => {
@@ -50,12 +49,13 @@
       console.log("categories", cat1, cat2);
       //check the guess, correct, replace condition with true if want to test images
       if (guessGenres.includes(cat1) && guessGenres.includes(cat2)) {
-        imageUrl = data["data"]["images"]["webp"]["image_url"];
-        guessesLeft -= 1;
+        gameContext.imageUrls[gridTile - 1] =
+          data["data"]["images"]["webp"]["image_url"];
+        gameContext.guessesLeft -= 1;
         searchTerm = "";
         dialog.close();
       } else {
-        guessesLeft -= 1;
+        gameContext.guessesLeft -= 1;
         searchTerm = "";
         dialog.close();
       }
@@ -63,11 +63,16 @@
       console.log(e.message);
     }
   }
+  console.timeEnd("test");
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
-{#if imageUrl !== ""}
-  <img class="image" src={imageUrl} alt="Anime Thumbnail from myanimelist" />
+{#if gameContext.imageUrls[gridTile - 1]}
+  <img
+    class="image"
+    src={gameContext.imageUrls[gridTile - 1]}
+    alt="Anime Thumbnail from myanimelist"
+  />
 {:else}
   <button
     class="gridTile"
