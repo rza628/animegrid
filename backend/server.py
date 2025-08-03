@@ -35,6 +35,10 @@ def genres():
     
 @app.route("/api/categories")
 def categories():
+    #status, finished, airing, upcoming
+    #got studios and split genres to genres, explicit, themes, demographics, used weighted random choice
+    # also use rankings, and scores, rankings are based on anime score on mal
+    # episode count, season, year (before or after some year like 2010), soruce
     def genres():
         url = 'https://api.jikan.moe/v4/genres/anime'
         try:

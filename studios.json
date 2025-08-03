@@ -1,0 +1,3252 @@
+{
+  "studios": [
+    {
+      "name": "Toei Animation",
+      "count": 962
+    },
+    {
+      "name": "Sunrise",
+      "count": 600
+    },
+    {
+      "name": "Discotek Media",
+      "count": 546
+    },
+    {
+      "name": "Movic",
+      "count": 528
+    },
+    {
+      "name": "Production I.G",
+      "count": 463
+    },
+    {
+      "name": "Madhouse",
+      "count": 394
+    },
+    {
+      "name": "Shueisha",
+      "count": 377
+    },
+    {
+      "name": "Pierrot",
+      "count": 325
+    },
+    {
+      "name": "Studio Deen",
+      "count": 324
+    },
+    {
+      "name": "ADV Films",
+      "count": 319
+    },
+    {
+      "name": "OLM",
+      "count": 316
+    },
+    {
+      "name": "bilibili",
+      "count": 288
+    },
+    {
+      "name": "Shin-Ei Animation",
+      "count": 283
+    },
+    {
+      "name": "TBS",
+      "count": 283
+    },
+    {
+      "name": "Aniplex of America",
+      "count": 269
+    },
+    {
+      "name": "A-1 Pictures",
+      "count": 260
+    },
+    {
+      "name": "AIC",
+      "count": 259
+    },
+    {
+      "name": "DLE",
+      "count": 232
+    },
+    {
+      "name": "Tencent Video",
+      "count": 223
+    },
+    {
+      "name": "Bandai Entertainment",
+      "count": 204
+    },
+    {
+      "name": "Geneon Entertainment USA",
+      "count": 191
+    },
+    {
+      "name": "TOHO",
+      "count": 183
+    },
+    {
+      "name": "Nihon Ad Systems",
+      "count": 176
+    },
+    {
+      "name": "Gonzo",
+      "count": 146
+    },
+    {
+      "name": "Bushiroad",
+      "count": 145
+    },
+    {
+      "name": "Warner Bros. Japan",
+      "count": 141
+    },
+    {
+      "name": "Group TAC",
+      "count": 136
+    },
+    {
+      "name": "AQUA ARIS",
+      "count": 135
+    },
+    {
+      "name": "Kyoto Animation",
+      "count": 135
+    },
+    {
+      "name": "SILVER LINK.",
+      "count": 128
+    },
+    {
+      "name": "Showgate",
+      "count": 127
+    },
+    {
+      "name": "Studio Mausu",
+      "count": 127
+    },
+    {
+      "name": "iQIYI",
+      "count": 126
+    },
+    {
+      "name": "LIDENFILMS",
+      "count": 121
+    },
+    {
+      "name": "Mediabank",
+      "count": 115
+    },
+    {
+      "name": "Brain's Base",
+      "count": 114
+    },
+    {
+      "name": "BS Fuji",
+      "count": 109
+    },
+    {
+      "name": "MAPPA",
+      "count": 109
+    },
+    {
+      "name": "Seven",
+      "count": 106
+    },
+    {
+      "name": "Geidai Animation",
+      "count": 105
+    },
+    {
+      "name": "Ashi Productions",
+      "count": 100
+    },
+    {
+      "name": "Lune-Pictures",
+      "count": 92
+    },
+    {
+      "name": "Gainax",
+      "count": 87
+    },
+    {
+      "name": "Bandai Namco Music Live",
+      "count": 81
+    },
+    {
+      "name": "Mushi Production",
+      "count": 80
+    },
+    {
+      "name": "Sammy",
+      "count": 80
+    },
+    {
+      "name": "Studio Hibari",
+      "count": 79
+    },
+    {
+      "name": "feel.",
+      "count": 78
+    },
+    {
+      "name": "ufotable",
+      "count": 77
+    },
+    {
+      "name": "BS NTV",
+      "count": 75
+    },
+    {
+      "name": "Kachidoki Studio",
+      "count": 74
+    },
+    {
+      "name": "Yomiuri TV Enterprise",
+      "count": 74
+    },
+    {
+      "name": "Actas",
+      "count": 73
+    },
+    {
+      "name": "Studio Comet",
+      "count": 73
+    },
+    {
+      "name": "Fanworks",
+      "count": 72
+    },
+    {
+      "name": "NHK Enterprises",
+      "count": 72
+    },
+    {
+      "name": "Studio 9 Maiami",
+      "count": 72
+    },
+    {
+      "name": "Youku",
+      "count": 72
+    },
+    {
+      "name": "NuTech Digital",
+      "count": 70
+    },
+    {
+      "name": "Maiden Japan",
+      "count": 69
+    },
+    {
+      "name": "SANZIGEN",
+      "count": 69
+    },
+    {
+      "name": "Asahi Production",
+      "count": 68
+    },
+    {
+      "name": "Kinema Citrus",
+      "count": 68
+    },
+    {
+      "name": "Ultra Super Pictures",
+      "count": 67
+    },
+    {
+      "name": "Lerche",
+      "count": 66
+    },
+    {
+      "name": "Haoliners Animation League",
+      "count": 65
+    },
+    {
+      "name": "Nagoya Broadcasting Network",
+      "count": 63
+    },
+    {
+      "name": "KSS",
+      "count": 61
+    },
+    {
+      "name": "Studio 1st",
+      "count": 60
+    },
+    {
+      "name": "Polygon Pictures",
+      "count": 58
+    },
+    {
+      "name": "TNK",
+      "count": 58
+    },
+    {
+      "name": "Artland",
+      "count": 56
+    },
+    {
+      "name": "David Production",
+      "count": 52
+    },
+    {
+      "name": "Studio Ghibli",
+      "count": 52
+    },
+    {
+      "name": "Eiken",
+      "count": 51
+    },
+    {
+      "name": "NetEase",
+      "count": 50
+    },
+    {
+      "name": "Project No.9",
+      "count": 50
+    },
+    {
+      "name": "Sony Pictures Entertainment",
+      "count": 49
+    },
+    {
+      "name": "Geneon Universal Entertainment",
+      "count": 47
+    },
+    {
+      "name": "Studio Fantasia",
+      "count": 44
+    },
+    {
+      "name": "Gathering",
+      "count": 43
+    },
+    {
+      "name": "Trigger",
+      "count": 43
+    },
+    {
+      "name": "Green Bunny",
+      "count": 41
+    },
+    {
+      "name": "Hoods Entertainment",
+      "count": 41
+    },
+    {
+      "name": "Alpha Group",
+      "count": 40
+    },
+    {
+      "name": "Blue bread",
+      "count": 40
+    },
+    {
+      "name": "Nomad",
+      "count": 39
+    },
+    {
+      "name": "Suzuki Mirano",
+      "count": 39
+    },
+    {
+      "name": "Seven Arcs",
+      "count": 39
+    },
+    {
+      "name": "Kamikaze Douga",
+      "count": 38
+    },
+    {
+      "name": "Netflix",
+      "count": 38
+    },
+    {
+      "name": "Office TakeOut",
+      "count": 38
+    },
+    {
+      "name": "A.C.G.T.",
+      "count": 37
+    },
+    {
+      "name": "Pony Canyon Enterprises",
+      "count": 37
+    },
+    {
+      "name": "Ai Addiction",
+      "count": 36
+    },
+    {
+      "name": "Graphinica",
+      "count": 36
+    },
+    {
+      "name": "Passione",
+      "count": 36
+    },
+    {
+      "name": "Signal.MD",
+      "count": 36
+    },
+    {
+      "name": "Triangle Staff",
+      "count": 36
+    },
+    {
+      "name": "miHoYoAnime",
+      "count": 35
+    },
+    {
+      "name": "Manglobe",
+      "count": 35
+    },
+    {
+      "name": "Shirogumi",
+      "count": 35
+    },
+    {
+      "name": "81 Produce",
+      "count": 34
+    },
+    {
+      "name": "AIC ASTA",
+      "count": 34
+    },
+    {
+      "name": "Artmic",
+      "count": 34
+    },
+    {
+      "name": "Bridge",
+      "count": 33
+    },
+    {
+      "name": "Radix",
+      "count": 33
+    },
+    {
+      "name": "Streamline Pictures",
+      "count": 33
+    },
+    {
+      "name": "The Answer Studio",
+      "count": 33
+    },
+    {
+      "name": "Studio Kai",
+      "count": 32
+    },
+    {
+      "name": "Tamabi",
+      "count": 31
+    },
+    {
+      "name": "Animation Do",
+      "count": 30
+    },
+    {
+      "name": "Creators in Pack",
+      "count": 30
+    },
+    {
+      "name": "Millepensee",
+      "count": 30
+    },
+    {
+      "name": "Pie in the sky",
+      "count": 30
+    },
+    {
+      "name": "APPP",
+      "count": 29
+    },
+    {
+      "name": "GANSIS",
+      "count": 29
+    },
+    {
+      "name": "ILCA",
+      "count": 29
+    },
+    {
+      "name": "Orange",
+      "count": 29
+    },
+    {
+      "name": "Studio Eromatick",
+      "count": 29
+    },
+    {
+      "name": "Crunchyroll SC Anime Fund",
+      "count": 28
+    },
+    {
+      "name": "Yokohama Animation Laboratory",
+      "count": 28
+    },
+    {
+      "name": "B.CMAY PICTURES",
+      "count": 27
+    },
+    {
+      "name": "Takun Manga Box",
+      "count": 27
+    },
+    {
+      "name": "Echoes",
+      "count": 26
+    },
+    {
+      "name": "Happinet Phantom Studios",
+      "count": 26
+    },
+    {
+      "name": "Toranoana",
+      "count": 26
+    },
+    {
+      "name": "WAO World",
+      "count": 26
+    },
+    {
+      "name": "Kuri Jikken Manga Koubou",
+      "count": 25
+    },
+    {
+      "name": "Marvelous AQL",
+      "count": 25
+    },
+    {
+      "name": "Science SARU",
+      "count": 25
+    },
+    {
+      "name": "NichiNare",
+      "count": 24
+    },
+    {
+      "name": "Studio BAZOOKA",
+      "count": 24
+    },
+    {
+      "name": "Shuka",
+      "count": 24
+    },
+    {
+      "name": "arma bianca",
+      "count": 23
+    },
+    {
+      "name": "Disney Platform Distribution",
+      "count": 23
+    },
+    {
+      "name": "Kate Arrow",
+      "count": 23
+    },
+    {
+      "name": "Mirai Film",
+      "count": 23
+    },
+    {
+      "name": "Picture Magic",
+      "count": 23
+    },
+    {
+      "name": "Sogo Vision",
+      "count": 23
+    },
+    {
+      "name": "Tsuburaya Productions",
+      "count": 23
+    },
+    {
+      "name": "Alpha Animation",
+      "count": 22
+    },
+    {
+      "name": "Big Firebird Culture",
+      "count": 22
+    },
+    {
+      "name": "ENGI",
+      "count": 22
+    },
+    {
+      "name": "E&G Films",
+      "count": 22
+    },
+    {
+      "name": "Flat Studio",
+      "count": 22
+    },
+    {
+      "name": "Geek Toys",
+      "count": 22
+    },
+    {
+      "name": "Iconix Entertainment",
+      "count": 22
+    },
+    {
+      "name": "Lay-duce",
+      "count": 22
+    },
+    {
+      "name": "Oddjob",
+      "count": 22
+    },
+    {
+      "name": "Studio A-CAT",
+      "count": 22
+    },
+    {
+      "name": "Toshiba EMI",
+      "count": 22
+    },
+    {
+      "name": "Bandai Visual USA",
+      "count": 21
+    },
+    {
+      "name": "DMM.futureworks",
+      "count": 21
+    },
+    {
+      "name": "Dongwoo A&E",
+      "count": 21
+    },
+    {
+      "name": "OLM Digital",
+      "count": 21
+    },
+    {
+      "name": "Saigo no Shudan",
+      "count": 21
+    },
+    {
+      "name": "Wonder Cat Animation",
+      "count": 21
+    },
+    {
+      "name": "W-Toon Studio",
+      "count": 21
+    },
+    {
+      "name": "Good Smile Film",
+      "count": 20
+    },
+    {
+      "name": "Ijigen Tokyo",
+      "count": 20
+    },
+    {
+      "name": "RG Animation Studios",
+      "count": 20
+    },
+    {
+      "name": "Urban Vision",
+      "count": 20
+    },
+    {
+      "name": "L\u00b2Studio",
+      "count": 19
+    },
+    {
+      "name": "Marza Animation Planet",
+      "count": 19
+    },
+    {
+      "name": "New Generation",
+      "count": 19
+    },
+    {
+      "name": "Production Reed",
+      "count": 19
+    },
+    {
+      "name": "Studio Live",
+      "count": 19
+    },
+    {
+      "name": "AIC PLUS+",
+      "count": 18
+    },
+    {
+      "name": "CyberAgent",
+      "count": 18
+    },
+    {
+      "name": "C-Station",
+      "count": 18
+    },
+    {
+      "name": "Encourage Films",
+      "count": 18
+    },
+    {
+      "name": "Felix Film",
+      "count": 18
+    },
+    {
+      "name": "Kitty Film Mitaka Studio",
+      "count": 18
+    },
+    {
+      "name": "Mimoid",
+      "count": 18
+    },
+    {
+      "name": "Maxilla",
+      "count": 18
+    },
+    {
+      "name": "Niceboat Animation",
+      "count": 18
+    },
+    {
+      "name": "Studio Moriken",
+      "count": 18
+    },
+    {
+      "name": "Tokyu Agency",
+      "count": 18
+    },
+    {
+      "name": "Tsuchida Productions",
+      "count": 18
+    },
+    {
+      "name": "AT-2",
+      "count": 17
+    },
+    {
+      "name": "Maho Film",
+      "count": 17
+    },
+    {
+      "name": "Ascendent Animation",
+      "count": 16
+    },
+    {
+      "name": "Bouncy",
+      "count": 16
+    },
+    {
+      "name": "Fenz",
+      "count": 16
+    },
+    {
+      "name": "Kanaban Graphics",
+      "count": 16
+    },
+    {
+      "name": "Onionskin",
+      "count": 16
+    },
+    {
+      "name": "Studio Hokiboshi",
+      "count": 16
+    },
+    {
+      "name": "Akatsuki",
+      "count": 15
+    },
+    {
+      "name": "Ascension",
+      "count": 15
+    },
+    {
+      "name": "DandeLion Animation Studio",
+      "count": 15
+    },
+    {
+      "name": "Fuji Creative",
+      "count": 15
+    },
+    {
+      "name": "G-angle",
+      "count": 15
+    },
+    {
+      "name": "High Energy Studio",
+      "count": 15
+    },
+    {
+      "name": "PP Project",
+      "count": 15
+    },
+    {
+      "name": "Peak Hunt",
+      "count": 15
+    },
+    {
+      "name": "pH Studio",
+      "count": 15
+    },
+    {
+      "name": "Shengying Animation",
+      "count": 15
+    },
+    {
+      "name": "AXsiZ",
+      "count": 14
+    },
+    {
+      "name": "BYMENT",
+      "count": 14
+    },
+    {
+      "name": "Collaboration Works",
+      "count": 14
+    },
+    {
+      "name": "Imagin",
+      "count": 14
+    },
+    {
+      "name": "Jumondou",
+      "count": 14
+    },
+    {
+      "name": "Office No. 8",
+      "count": 14
+    },
+    {
+      "name": "Topcraft",
+      "count": 14
+    },
+    {
+      "name": "Xing Yi Kai Chen",
+      "count": 14
+    },
+    {
+      "name": "Yaoyorozu",
+      "count": 14
+    },
+    {
+      "name": "Craftar Studios",
+      "count": 13
+    },
+    {
+      "name": "Decovocal",
+      "count": 13
+    },
+    {
+      "name": "Daewon Media",
+      "count": 13
+    },
+    {
+      "name": "Koei",
+      "count": 13
+    },
+    {
+      "name": "Okuruto Noboru",
+      "count": 13
+    },
+    {
+      "name": "Painting Dream",
+      "count": 13
+    },
+    {
+      "name": "Scooter Films",
+      "count": 13
+    },
+    {
+      "name": "SELFISH",
+      "count": 13
+    },
+    {
+      "name": "Transcendence Picture",
+      "count": 13
+    },
+    {
+      "name": "CHOCOLATE",
+      "count": 12
+    },
+    {
+      "name": "Imagica Infos",
+      "count": 12
+    },
+    {
+      "name": "Nexus",
+      "count": 12
+    },
+    {
+      "name": "Pinkfong",
+      "count": 12
+    },
+    {
+      "name": "Platinum Vision",
+      "count": 12
+    },
+    {
+      "name": "qmotri",
+      "count": 12
+    },
+    {
+      "name": "Qzil.la",
+      "count": 12
+    },
+    {
+      "name": "Shion",
+      "count": 12
+    },
+    {
+      "name": "Sola Digital Arts",
+      "count": 12
+    },
+    {
+      "name": "Trash Studio",
+      "count": 12
+    },
+    {
+      "name": "TriF Studio",
+      "count": 12
+    },
+    {
+      "name": "Yuewen Animation & Comics",
+      "count": 12
+    },
+    {
+      "name": "CCTV Animation Group",
+      "count": 11
+    },
+    {
+      "name": "Dream Entertainment",
+      "count": 11
+    },
+    {
+      "name": "EDGE",
+      "count": 11
+    },
+    {
+      "name": "Geno Studio",
+      "count": 11
+    },
+    {
+      "name": "Grouper Productions",
+      "count": 11
+    },
+    {
+      "name": "Lapin Track",
+      "count": 11
+    },
+    {
+      "name": "Light Chaser Animation Studios",
+      "count": 11
+    },
+    {
+      "name": "Red Dog Culture House",
+      "count": 11
+    },
+    {
+      "name": "Studio Placebo",
+      "count": 11
+    },
+    {
+      "name": "Sunrise Beyond",
+      "count": 11
+    },
+    {
+      "name": "Studio VOLN",
+      "count": 11
+    },
+    {
+      "name": "TOHO animation STUDIO",
+      "count": 11
+    },
+    {
+      "name": "10Gauge",
+      "count": 10
+    },
+    {
+      "name": "AlphaPolis",
+      "count": 10
+    },
+    {
+      "name": "Agent 21",
+      "count": 10
+    },
+    {
+      "name": "Blue Cat",
+      "count": 10
+    },
+    {
+      "name": "East Fish Studio",
+      "count": 10
+    },
+    {
+      "name": "Enishiya",
+      "count": 10
+    },
+    {
+      "name": "G-Lam",
+      "count": 10
+    },
+    {
+      "name": "IMAGICA Lab.",
+      "count": 10
+    },
+    {
+      "name": "Lyrics",
+      "count": 10
+    },
+    {
+      "name": "ORADA COMPANY",
+      "count": 10
+    },
+    {
+      "name": "Piso Studio",
+      "count": 10
+    },
+    {
+      "name": "PRA",
+      "count": 10
+    },
+    {
+      "name": "Plum",
+      "count": 10
+    },
+    {
+      "name": "Studio Jemi",
+      "count": 10
+    },
+    {
+      "name": "studio MOTHER",
+      "count": 10
+    },
+    {
+      "name": "SMIRAL Animation",
+      "count": 10
+    },
+    {
+      "name": "Shimogumi",
+      "count": 10
+    },
+    {
+      "name": "Studio Blanc.",
+      "count": 10
+    },
+    {
+      "name": "Studio Rikka",
+      "count": 10
+    },
+    {
+      "name": "TrioPen Studio",
+      "count": 10
+    },
+    {
+      "name": "Thundray",
+      "count": 10
+    },
+    {
+      "name": "AIC Build",
+      "count": 9
+    },
+    {
+      "name": "Animaruya",
+      "count": 9
+    },
+    {
+      "name": "CLAP",
+      "count": 9
+    },
+    {
+      "name": "Dynamo Pictures",
+      "count": 9
+    },
+    {
+      "name": "Eallin",
+      "count": 9
+    },
+    {
+      "name": "Emon",
+      "count": 9
+    },
+    {
+      "name": "Front Line",
+      "count": 9
+    },
+    {
+      "name": "Gravity Well",
+      "count": 9
+    },
+    {
+      "name": "Making Animation",
+      "count": 9
+    },
+    {
+      "name": "Office AO",
+      "count": 9
+    },
+    {
+      "name": "Studio Crocodile",
+      "count": 9
+    },
+    {
+      "name": "Silver",
+      "count": 9
+    },
+    {
+      "name": "Studio Elle",
+      "count": 9
+    },
+    {
+      "name": "Teatro Nishi Tokyo Studio",
+      "count": 9
+    },
+    {
+      "name": "YHKT Entertainment",
+      "count": 9
+    },
+    {
+      "name": "Zero-G Room",
+      "count": 9
+    },
+    {
+      "name": "100studio",
+      "count": 8
+    },
+    {
+      "name": "7doc",
+      "count": 8
+    },
+    {
+      "name": "ARCUS",
+      "count": 8
+    },
+    {
+      "name": "ADK Emotions NY Inc.",
+      "count": 8
+    },
+    {
+      "name": "Acca effe",
+      "count": 8
+    },
+    {
+      "name": "BOMB! CUTE! BOMB!",
+      "count": 8
+    },
+    {
+      "name": "BS TV Tokyo",
+      "count": 8
+    },
+    {
+      "name": "Cloud Hearts",
+      "count": 8
+    },
+    {
+      "name": "CBS Sony Group",
+      "count": 8
+    },
+    {
+      "name": "GIFTanimation",
+      "count": 8
+    },
+    {
+      "name": "GEMBA",
+      "count": 8
+    },
+    {
+      "name": "Hayabusa Film",
+      "count": 8
+    },
+    {
+      "name": "Horgos Coloroom Pictures Co., Ltd.",
+      "count": 8
+    },
+    {
+      "name": "I.Gzwei",
+      "count": 8
+    },
+    {
+      "name": "Larx Entertainment",
+      "count": 8
+    },
+    {
+      "name": "Meltdown",
+      "count": 8
+    },
+    {
+      "name": "Mili Pictures",
+      "count": 8
+    },
+    {
+      "name": "Minakata Laboratory",
+      "count": 8
+    },
+    {
+      "name": "Palm Studio",
+      "count": 8
+    },
+    {
+      "name": "Quad",
+      "count": 8
+    },
+    {
+      "name": "Rising Force",
+      "count": 8
+    },
+    {
+      "name": "Shenman Entertainment",
+      "count": 8
+    },
+    {
+      "name": "Studio OX",
+      "count": 8
+    },
+    {
+      "name": "SEK Studios",
+      "count": 8
+    },
+    {
+      "name": "Studio Chizu",
+      "count": 8
+    },
+    {
+      "name": "Tokyo Movie",
+      "count": 8
+    },
+    {
+      "name": "Tomovies",
+      "count": 8
+    },
+    {
+      "name": "ABC Frontier",
+      "count": 7
+    },
+    {
+      "name": "Animation Staff Room",
+      "count": 7
+    },
+    {
+      "name": "AIC Classic",
+      "count": 7
+    },
+    {
+      "name": "A-Real",
+      "count": 7
+    },
+    {
+      "name": "ACC Production",
+      "count": 7
+    },
+    {
+      "name": "A-Line",
+      "count": 7
+    },
+    {
+      "name": "Chiptune",
+      "count": 7
+    },
+    {
+      "name": "Creative Power Entertaining",
+      "count": 7
+    },
+    {
+      "name": "Dangun Pictures",
+      "count": 7
+    },
+    {
+      "name": "Imagineer",
+      "count": 7
+    },
+    {
+      "name": "Liu Cong Animation",
+      "count": 7
+    },
+    {
+      "name": "Maboroshi Koubou",
+      "count": 7
+    },
+    {
+      "name": "MediaNet Pictures",
+      "count": 7
+    },
+    {
+      "name": "monofilmo",
+      "count": 7
+    },
+    {
+      "name": "NADA Holdings",
+      "count": 7
+    },
+    {
+      "name": "Pb Animation Co. Ltd.",
+      "count": 7
+    },
+    {
+      "name": "PrimeTime",
+      "count": 7
+    },
+    {
+      "name": "Revoroot",
+      "count": 7
+    },
+    {
+      "name": "Staple Entertainment",
+      "count": 7
+    },
+    {
+      "name": "Shindeban Film",
+      "count": 7
+    },
+    {
+      "name": "Studio RE:Map",
+      "count": 7
+    },
+    {
+      "name": "Super Normal Studio",
+      "count": 7
+    },
+    {
+      "name": "Sola Entertainment",
+      "count": 7
+    },
+    {
+      "name": "Studio Kaab",
+      "count": 7
+    },
+    {
+      "name": "Team YokkyuFuman",
+      "count": 7
+    },
+    {
+      "name": "Takahashi Studio",
+      "count": 7
+    },
+    {
+      "name": "WOWMAX",
+      "count": 7
+    },
+    {
+      "name": "Anon Pictures",
+      "count": 6
+    },
+    {
+      "name": "Anpro",
+      "count": 6
+    },
+    {
+      "name": "Bakken Record",
+      "count": 6
+    },
+    {
+      "name": "Coastline Animation Studio",
+      "count": 6
+    },
+    {
+      "name": "DC Impression Vision",
+      "count": 6
+    },
+    {
+      "name": "GARDEN LODGE",
+      "count": 6
+    },
+    {
+      "name": "Hifumi, Inc.",
+      "count": 6
+    },
+    {
+      "name": "Horannabi",
+      "count": 6
+    },
+    {
+      "name": "Image House",
+      "count": 6
+    },
+    {
+      "name": "Koinrush Studio",
+      "count": 6
+    },
+    {
+      "name": "Kyoto Broadcasting System",
+      "count": 6
+    },
+    {
+      "name": "Konami Cross Media NY",
+      "count": 6
+    },
+    {
+      "name": "Liyu Culture",
+      "count": 6
+    },
+    {
+      "name": "Pops Inc.",
+      "count": 6
+    },
+    {
+      "name": "REMOW",
+      "count": 6
+    },
+    {
+      "name": "R11R",
+      "count": 6
+    },
+    {
+      "name": "Shura",
+      "count": 6
+    },
+    {
+      "name": "Sharefun Studio",
+      "count": 6
+    },
+    {
+      "name": "Studio Palette",
+      "count": 6
+    },
+    {
+      "name": "Studio CANDY BOX",
+      "count": 6
+    },
+    {
+      "name": "Saetta",
+      "count": 6
+    },
+    {
+      "name": "Shanghai Hippo Animation",
+      "count": 6
+    },
+    {
+      "name": "Shochiku Animation Institute",
+      "count": 6
+    },
+    {
+      "name": "Tokyo Polytechnic University",
+      "count": 6
+    },
+    {
+      "name": "Tianshi Wenhua",
+      "count": 6
+    },
+    {
+      "name": "Taikong Works",
+      "count": 6
+    },
+    {
+      "name": "TCJ",
+      "count": 6
+    },
+    {
+      "name": "UKA",
+      "count": 6
+    },
+    {
+      "name": "Yi Chen Animation",
+      "count": 6
+    },
+    {
+      "name": "Andraft",
+      "count": 5
+    },
+    {
+      "name": "Au Praxinoscope",
+      "count": 5
+    },
+    {
+      "name": "Atelier Pontdarc",
+      "count": 5
+    },
+    {
+      "name": "Anima&Co.",
+      "count": 5
+    },
+    {
+      "name": "CMC Media",
+      "count": 5
+    },
+    {
+      "name": "DiC Entertainment",
+      "count": 5
+    },
+    {
+      "name": "Giga Production",
+      "count": 5
+    },
+    {
+      "name": "HS Pictures Studio",
+      "count": 5
+    },
+    {
+      "name": "Issen",
+      "count": 5
+    },
+    {
+      "name": "J.T.P.P.",
+      "count": 5
+    },
+    {
+      "name": "Jumonji",
+      "count": 5
+    },
+    {
+      "name": "JCF",
+      "count": 5
+    },
+    {
+      "name": "Kung Fu Frog Animation",
+      "count": 5
+    },
+    {
+      "name": "Korean Academy of Film Arts",
+      "count": 5
+    },
+    {
+      "name": "Locus Corporation",
+      "count": 5
+    },
+    {
+      "name": "LX Animation Studio",
+      "count": 5
+    },
+    {
+      "name": "l-a-unch\u30fbBOX",
+      "count": 5
+    },
+    {
+      "name": "NHK Art",
+      "count": 5
+    },
+    {
+      "name": "Pmats9 studio",
+      "count": 5
+    },
+    {
+      "name": "Passion Paint Animation",
+      "count": 5
+    },
+    {
+      "name": "Pollyanna Graphics",
+      "count": 5
+    },
+    {
+      "name": "Ryuu M's",
+      "count": 5
+    },
+    {
+      "name": "Shykeumo Animation Studio",
+      "count": 5
+    },
+    {
+      "name": "Stereotype",
+      "count": 5
+    },
+    {
+      "name": "Sunflowers",
+      "count": 5
+    },
+    {
+      "name": "Stay Luck",
+      "count": 5
+    },
+    {
+      "name": "Studio Soul",
+      "count": 5
+    },
+    {
+      "name": "Shinjukuza",
+      "count": 5
+    },
+    {
+      "name": "Studio Boogie Nights",
+      "count": 5
+    },
+    {
+      "name": "Studio Kingyoiro",
+      "count": 5
+    },
+    {
+      "name": "Studio Daisy",
+      "count": 5
+    },
+    {
+      "name": "Sony Interactive Entertainment",
+      "count": 5
+    },
+    {
+      "name": "Sublimation",
+      "count": 5
+    },
+    {
+      "name": "Square Enix Visual Works",
+      "count": 5
+    },
+    {
+      "name": "Studio Lings",
+      "count": 5
+    },
+    {
+      "name": "Studio Flad",
+      "count": 5
+    },
+    {
+      "name": "Studio Ponoc",
+      "count": 5
+    },
+    {
+      "name": "SIDO LIMITED",
+      "count": 5
+    },
+    {
+      "name": "Tokyo TV Douga",
+      "count": 5
+    },
+    {
+      "name": "Taomee",
+      "count": 5
+    },
+    {
+      "name": "TAKI Corporation",
+      "count": 5
+    },
+    {
+      "name": "UWAN Pictures",
+      "count": 5
+    },
+    {
+      "name": "Wright Staff",
+      "count": 5
+    },
+    {
+      "name": "yell",
+      "count": 5
+    },
+    {
+      "name": "AC-Bu",
+      "count": 4
+    },
+    {
+      "name": "AN Entertainment",
+      "count": 4
+    },
+    {
+      "name": "Arch",
+      "count": 4
+    },
+    {
+      "name": "CUCURI",
+      "count": 4
+    },
+    {
+      "name": "Deregula",
+      "count": 4
+    },
+    {
+      "name": "D.ROCK-ART",
+      "count": 4
+    },
+    {
+      "name": "Datama Film",
+      "count": 4
+    },
+    {
+      "name": "Dancing CG Studio",
+      "count": 4
+    },
+    {
+      "name": "Digital Network Animation",
+      "count": 4
+    },
+    {
+      "name": "Elias",
+      "count": 4
+    },
+    {
+      "name": "EKACHI EPILKA",
+      "count": 4
+    },
+    {
+      "name": "Ekura Animal",
+      "count": 4
+    },
+    {
+      "name": "Egg",
+      "count": 4
+    },
+    {
+      "name": "G.P Entertainment",
+      "count": 4
+    },
+    {
+      "name": "Gainax Kyoto",
+      "count": 4
+    },
+    {
+      "name": "Hand to Mouse.",
+      "count": 4
+    },
+    {
+      "name": "Husio Studio",
+      "count": 4
+    },
+    {
+      "name": "Infinity Vision",
+      "count": 4
+    },
+    {
+      "name": "Joker Films",
+      "count": 4
+    },
+    {
+      "name": "Kuaikan Manhua",
+      "count": 4
+    },
+    {
+      "name": "Live2D Creative Studio",
+      "count": 4
+    },
+    {
+      "name": "Micro House",
+      "count": 4
+    },
+    {
+      "name": "Mousou Senka",
+      "count": 4
+    },
+    {
+      "name": "Netmarble",
+      "count": 4
+    },
+    {
+      "name": "Noovo",
+      "count": 4
+    },
+    {
+      "name": "Natural High",
+      "count": 4
+    },
+    {
+      "name": "Okumaza",
+      "count": 4
+    },
+    {
+      "name": "October Media",
+      "count": 4
+    },
+    {
+      "name": "Project Studio Q",
+      "count": 4
+    },
+    {
+      "name": "P core",
+      "count": 4
+    },
+    {
+      "name": "Production D.M.H",
+      "count": 4
+    },
+    {
+      "name": "Project Team Sarah",
+      "count": 4
+    },
+    {
+      "name": "production doA",
+      "count": 4
+    },
+    {
+      "name": "Qingxiang Culture",
+      "count": 4
+    },
+    {
+      "name": "Qianqi Animation",
+      "count": 4
+    },
+    {
+      "name": "ROLL2",
+      "count": 4
+    },
+    {
+      "name": "Rabbit Machine",
+      "count": 4
+    },
+    {
+      "name": "Studio Bingo",
+      "count": 4
+    },
+    {
+      "name": "SIGNIF",
+      "count": 4
+    },
+    {
+      "name": "studio YOG",
+      "count": 4
+    },
+    {
+      "name": "Studio Ranmaru",
+      "count": 4
+    },
+    {
+      "name": "Studio Prokion",
+      "count": 4
+    },
+    {
+      "name": "Sonsan Kikaku",
+      "count": 4
+    },
+    {
+      "name": "Studio Ten Carat",
+      "count": 4
+    },
+    {
+      "name": "Sugar Boy",
+      "count": 4
+    },
+    {
+      "name": "team Yamahitsuji",
+      "count": 4
+    },
+    {
+      "name": "TAP",
+      "count": 4
+    },
+    {
+      "name": "Xiaoming Taiji",
+      "count": 4
+    },
+    {
+      "name": "Yoyogi Animation Gakuin",
+      "count": 4
+    },
+    {
+      "name": "YURUPPE Inc.",
+      "count": 4
+    },
+    {
+      "name": "ARECT",
+      "count": 3
+    },
+    {
+      "name": "Anime Friend",
+      "count": 3
+    },
+    {
+      "name": "BUG FILMS",
+      "count": 3
+    },
+    {
+      "name": "Boyan Pictures",
+      "count": 3
+    },
+    {
+      "name": "B&T",
+      "count": 3
+    },
+    {
+      "name": "Buemon",
+      "count": 3
+    },
+    {
+      "name": "CANON RECORDINGS",
+      "count": 3
+    },
+    {
+      "name": "cogitoworks",
+      "count": 3
+    },
+    {
+      "name": "Cafe de Jeilhouse",
+      "count": 3
+    },
+    {
+      "name": "Creators Dot Com",
+      "count": 3
+    },
+    {
+      "name": "Dazzling Star",
+      "count": 3
+    },
+    {
+      "name": "drop",
+      "count": 3
+    },
+    {
+      "name": "Escape Velocity Animation",
+      "count": 3
+    },
+    {
+      "name": "Enjin Productions",
+      "count": 3
+    },
+    {
+      "name": "Ez\u03ccla",
+      "count": 3
+    },
+    {
+      "name": "flag Co.",
+      "count": 3
+    },
+    {
+      "name": "Fever Creations",
+      "count": 3
+    },
+    {
+      "name": "G&G Direction",
+      "count": 3
+    },
+    {
+      "name": "Ga-Crew",
+      "count": 3
+    },
+    {
+      "name": "Guton Animation Studio",
+      "count": 3
+    },
+    {
+      "name": "GRIZZLY",
+      "count": 3
+    },
+    {
+      "name": "HM Heros",
+      "count": 3
+    },
+    {
+      "name": "J.C.F.",
+      "count": 3
+    },
+    {
+      "name": "Japan Taps",
+      "count": 3
+    },
+    {
+      "name": "Konami animation",
+      "count": 3
+    },
+    {
+      "name": "Kill Time Communication",
+      "count": 3
+    },
+    {
+      "name": "LB Commerce",
+      "count": 3
+    },
+    {
+      "name": "Lingsanwu Animation",
+      "count": 3
+    },
+    {
+      "name": "Miota",
+      "count": 3
+    },
+    {
+      "name": "MB planning",
+      "count": 3
+    },
+    {
+      "name": "Melissa",
+      "count": 3
+    },
+    {
+      "name": "Manga Productions",
+      "count": 3
+    },
+    {
+      "name": "Nippon TV Douga",
+      "count": 3
+    },
+    {
+      "name": "Nagoya University of Arts and Sciences",
+      "count": 3
+    },
+    {
+      "name": "NANON CREATIVE",
+      "count": 3
+    },
+    {
+      "name": "Namu Animation",
+      "count": 3
+    },
+    {
+      "name": "Neft Film",
+      "count": 3
+    },
+    {
+      "name": "Onion Studio",
+      "count": 3
+    },
+    {
+      "name": "Planet Cartoon",
+      "count": 3
+    },
+    {
+      "name": "Paper Plane Animation Studio",
+      "count": 3
+    },
+    {
+      "name": "Point Pictures",
+      "count": 3
+    },
+    {
+      "name": "Polygon Magic",
+      "count": 3
+    },
+    {
+      "name": "Qualia Animation",
+      "count": 3
+    },
+    {
+      "name": "Ripromo",
+      "count": 3
+    },
+    {
+      "name": "Studio LEO",
+      "count": 3
+    },
+    {
+      "name": "STUDIO 8 DOGS",
+      "count": 3
+    },
+    {
+      "name": "Studio N",
+      "count": 3
+    },
+    {
+      "name": "Studio A. Craft",
+      "count": 3
+    },
+    {
+      "name": "Studio Easter",
+      "count": 3
+    },
+    {
+      "name": "Studio Gazelle",
+      "count": 3
+    },
+    {
+      "name": "Studio Ten",
+      "count": 3
+    },
+    {
+      "name": "Scarlett",
+      "count": 3
+    },
+    {
+      "name": "Studio Kafka",
+      "count": 3
+    },
+    {
+      "name": "Suspenders",
+      "count": 3
+    },
+    {
+      "name": "Samsara Animation Studio",
+      "count": 3
+    },
+    {
+      "name": "Studio March",
+      "count": 3
+    },
+    {
+      "name": "Studio Core",
+      "count": 3
+    },
+    {
+      "name": "Stingray",
+      "count": 3
+    },
+    {
+      "name": "Sprite Animation Studios",
+      "count": 3
+    },
+    {
+      "name": "Studio NOIX",
+      "count": 3
+    },
+    {
+      "name": "Studio Bogey",
+      "count": 3
+    },
+    {
+      "name": "Tryforce",
+      "count": 3
+    },
+    {
+      "name": "TthunDer Animation",
+      "count": 3
+    },
+    {
+      "name": "Tengu Kobo",
+      "count": 3
+    },
+    {
+      "name": "Tonko House",
+      "count": 3
+    },
+    {
+      "name": "Tomason",
+      "count": 3
+    },
+    {
+      "name": "Urban Product",
+      "count": 3
+    },
+    {
+      "name": "Viewworks",
+      "count": 3
+    },
+    {
+      "name": "Windy Studio",
+      "count": 3
+    },
+    {
+      "name": "Wave Master",
+      "count": 3
+    },
+    {
+      "name": "Wolf Smoke Studio",
+      "count": 3
+    },
+    {
+      "name": "Yinhe Changxing Culture",
+      "count": 3
+    },
+    {
+      "name": "5 Inc.",
+      "count": 2
+    },
+    {
+      "name": "1IN",
+      "count": 2
+    },
+    {
+      "name": "3xCube",
+      "count": 2
+    },
+    {
+      "name": "AION Studio",
+      "count": 2
+    },
+    {
+      "name": "Ai Yume Mai",
+      "count": 2
+    },
+    {
+      "name": "Aiti St.",
+      "count": 2
+    },
+    {
+      "name": "Alfred Imageworks",
+      "count": 2
+    },
+    {
+      "name": "Alice Production",
+      "count": 2
+    },
+    {
+      "name": "Arcturus",
+      "count": 2
+    },
+    {
+      "name": "An DerCen",
+      "count": 2
+    },
+    {
+      "name": "Bebow",
+      "count": 2
+    },
+    {
+      "name": "Big Wing",
+      "count": 2
+    },
+    {
+      "name": "Bibury Animation CG",
+      "count": 2
+    },
+    {
+      "name": "Borutong",
+      "count": 2
+    },
+    {
+      "name": "Children's Corner",
+      "count": 2
+    },
+    {
+      "name": "Cocktail Media",
+      "count": 2
+    },
+    {
+      "name": "Creative House Pocket",
+      "count": 2
+    },
+    {
+      "name": "CUC Anima",
+      "count": 2
+    },
+    {
+      "name": "Chongzhuo Animation",
+      "count": 2
+    },
+    {
+      "name": "CD Projekt Red",
+      "count": 2
+    },
+    {
+      "name": "Circus Production",
+      "count": 2
+    },
+    {
+      "name": "Cutie Bee",
+      "count": 2
+    },
+    {
+      "name": "Circle Tribute",
+      "count": 2
+    },
+    {
+      "name": "CinePix",
+      "count": 2
+    },
+    {
+      "name": "Dyna Method",
+      "count": 2
+    },
+    {
+      "name": "Djinn Power",
+      "count": 2
+    },
+    {
+      "name": "Diwphalanx Records",
+      "count": 2
+    },
+    {
+      "name": "Dongyang Animation",
+      "count": 2
+    },
+    {
+      "name": "Dai-Ichi Douga",
+      "count": 2
+    },
+    {
+      "name": "Executive Decision",
+      "count": 2
+    },
+    {
+      "name": "Eshoya Honpo",
+      "count": 2
+    },
+    {
+      "name": "Flying Fish Studio",
+      "count": 2
+    },
+    {
+      "name": "Ginga Teikoku",
+      "count": 2
+    },
+    {
+      "name": "Garyuu Studio",
+      "count": 2
+    },
+    {
+      "name": "Gambit",
+      "count": 2
+    },
+    {
+      "name": "Green Monster Team",
+      "count": 2
+    },
+    {
+      "name": "Happy Toon",
+      "count": 2
+    },
+    {
+      "name": "Hu Po Donghua",
+      "count": 2
+    },
+    {
+      "name": "Hifumi Shobo",
+      "count": 2
+    },
+    {
+      "name": "happyproject",
+      "count": 2
+    },
+    {
+      "name": "iDreamSky",
+      "count": 2
+    },
+    {
+      "name": "Inugoya",
+      "count": 2
+    },
+    {
+      "name": "iDRAGONS Creative Studio",
+      "count": 2
+    },
+    {
+      "name": "Ishimori Entertainment",
+      "count": 2
+    },
+    {
+      "name": "Kyoto University of the Arts",
+      "count": 2
+    },
+    {
+      "name": "Kid+Kid Animation Studio",
+      "count": 2
+    },
+    {
+      "name": "Kitchen Ltd.",
+      "count": 2
+    },
+    {
+      "name": "Kusama Art",
+      "count": 2
+    },
+    {
+      "name": "Keica",
+      "count": 2
+    },
+    {
+      "name": "Momoi Planning",
+      "count": 2
+    },
+    {
+      "name": "MMT Technology",
+      "count": 2
+    },
+    {
+      "name": "Maro Studio",
+      "count": 2
+    },
+    {
+      "name": "Magia Doraglier",
+      "count": 2
+    },
+    {
+      "name": "MASTER LIGHTS",
+      "count": 2
+    },
+    {
+      "name": "Moss Design Unit",
+      "count": 2
+    },
+    {
+      "name": "Outline",
+      "count": 2
+    },
+    {
+      "name": "ORCEN",
+      "count": 2
+    },
+    {
+      "name": "Oyster",
+      "count": 2
+    },
+    {
+      "name": "ONIRO",
+      "count": 2
+    },
+    {
+      "name": "OZ",
+      "count": 2
+    },
+    {
+      "name": "ORENDA",
+      "count": 2
+    },
+    {
+      "name": "Odolttogi",
+      "count": 2
+    },
+    {
+      "name": "Office DCI",
+      "count": 2
+    },
+    {
+      "name": "Production Wave",
+      "count": 2
+    },
+    {
+      "name": "Paper Animation",
+      "count": 2
+    },
+    {
+      "name": "Pancake",
+      "count": 2
+    },
+    {
+      "name": "Penta Show Studios",
+      "count": 2
+    },
+    {
+      "name": "Qiying Animation",
+      "count": 2
+    },
+    {
+      "name": "Quebico",
+      "count": 2
+    },
+    {
+      "name": "Rhythmos",
+      "count": 2
+    },
+    {
+      "name": "Reirs",
+      "count": 2
+    },
+    {
+      "name": "Rock'n Roll Mountain",
+      "count": 2
+    },
+    {
+      "name": "Ranzai Studio",
+      "count": 2
+    },
+    {
+      "name": "REALTHING",
+      "count": 2
+    },
+    {
+      "name": "Sunny Gapen",
+      "count": 2
+    },
+    {
+      "name": "Soigne",
+      "count": 2
+    },
+    {
+      "name": "Studio Eight Color",
+      "count": 2
+    },
+    {
+      "name": "Studio Lemon",
+      "count": 2
+    },
+    {
+      "name": "Sakura Eiga-sha",
+      "count": 2
+    },
+    {
+      "name": "Sankaku",
+      "count": 2
+    },
+    {
+      "name": "Square Pictures",
+      "count": 2
+    },
+    {
+      "name": "Studio Dolphin Night",
+      "count": 2
+    },
+    {
+      "name": "StarLink",
+      "count": 2
+    },
+    {
+      "name": "Space-X",
+      "count": 2
+    },
+    {
+      "name": "Studio Shelter",
+      "count": 2
+    },
+    {
+      "name": "Studio Ppuri",
+      "count": 2
+    },
+    {
+      "name": "Studio Mir",
+      "count": 2
+    },
+    {
+      "name": "Studio UGOKI",
+      "count": 2
+    },
+    {
+      "name": "Studio AWAKE",
+      "count": 2
+    },
+    {
+      "name": "Studio Lotus",
+      "count": 2
+    },
+    {
+      "name": "Studio Izena",
+      "count": 2
+    },
+    {
+      "name": "Team OneOne",
+      "count": 2
+    },
+    {
+      "name": "Tohjak",
+      "count": 2
+    },
+    {
+      "name": "TANOsim",
+      "count": 2
+    },
+    {
+      "name": "Unend",
+      "count": 2
+    },
+    {
+      "name": "UchuPeople",
+      "count": 2
+    },
+    {
+      "name": "Voil",
+      "count": 2
+    },
+    {
+      "name": "Wanda Media",
+      "count": 2
+    },
+    {
+      "name": "Xanthus Media",
+      "count": 2
+    },
+    {
+      "name": "Y&N Brothers",
+      "count": 2
+    },
+    {
+      "name": "Yoon's Color",
+      "count": 2
+    },
+    {
+      "name": "Ziine Studio",
+      "count": 2
+    },
+    {
+      "name": "33 Collective",
+      "count": 1
+    },
+    {
+      "name": "Alke",
+      "count": 1
+    },
+    {
+      "name": "Anime Tokyo",
+      "count": 1
+    },
+    {
+      "name": "Aurora Animation",
+      "count": 1
+    },
+    {
+      "name": "Animation 501",
+      "count": 1
+    },
+    {
+      "name": "AIC Project",
+      "count": 1
+    },
+    {
+      "name": "ANiMix Project",
+      "count": 1
+    },
+    {
+      "name": "Atti Production",
+      "count": 1
+    },
+    {
+      "name": "Atorie A.B.C.",
+      "count": 1
+    },
+    {
+      "name": "Amineworks",
+      "count": 1
+    },
+    {
+      "name": "Amarcord",
+      "count": 1
+    },
+    {
+      "name": "Aiko",
+      "count": 1
+    },
+    {
+      "name": "Alpha Pictures",
+      "count": 1
+    },
+    {
+      "name": "Animation Lab Japan",
+      "count": 1
+    },
+    {
+      "name": "Ark",
+      "count": 1
+    },
+    {
+      "name": "Albacrow",
+      "count": 1
+    },
+    {
+      "name": "ANIDO FILM",
+      "count": 1
+    },
+    {
+      "name": "Ankama Animations",
+      "count": 1
+    },
+    {
+      "name": "Aurum Production",
+      "count": 1
+    },
+    {
+      "name": "Arcs Create",
+      "count": 1
+    },
+    {
+      "name": "AIC Takarazuka",
+      "count": 1
+    },
+    {
+      "name": "Bellnox Films",
+      "count": 1
+    },
+    {
+      "name": "Blaze Studio",
+      "count": 1
+    },
+    {
+      "name": "Big Pine Animation Studio",
+      "count": 1
+    },
+    {
+      "name": "Bigcat Studio",
+      "count": 1
+    },
+    {
+      "name": "Blue Moon Studio Inc.",
+      "count": 1
+    },
+    {
+      "name": "Blue Note",
+      "count": 1
+    },
+    {
+      "name": "Benlai Pictures",
+      "count": 1
+    },
+    {
+      "name": "Brio Animation",
+      "count": 1
+    },
+    {
+      "name": "Beijing Sunchime Happy Culture Company",
+      "count": 1
+    },
+    {
+      "name": "Bitgang",
+      "count": 1
+    },
+    {
+      "name": "Chenghuang Yinghua",
+      "count": 1
+    },
+    {
+      "name": "C&S Production",
+      "count": 1
+    },
+    {
+      "name": "C and R",
+      "count": 1
+    },
+    {
+      "name": "Concept Films",
+      "count": 1
+    },
+    {
+      "name": "D'ART Shtajio",
+      "count": 1
+    },
+    {
+      "name": "Daysview Animation",
+      "count": 1
+    },
+    {
+      "name": "Delpic",
+      "count": 1
+    },
+    {
+      "name": "Days",
+      "count": 1
+    },
+    {
+      "name": "Drawing and Manual",
+      "count": 1
+    },
+    {
+      "name": "Dawn Animation",
+      "count": 1
+    },
+    {
+      "name": "Da Huoniao Donghua",
+      "count": 1
+    },
+    {
+      "name": "evg",
+      "count": 1
+    },
+    {
+      "name": "Enzo Animation",
+      "count": 1
+    },
+    {
+      "name": "Ekakiya",
+      "count": 1
+    },
+    {
+      "name": "Ether Kitten",
+      "count": 1
+    },
+    {
+      "name": "e-notion",
+      "count": 1
+    },
+    {
+      "name": "GUMBLAB",
+      "count": 1
+    },
+    {
+      "name": "Griot Groove",
+      "count": 1
+    },
+    {
+      "name": "Gunners",
+      "count": 1
+    },
+    {
+      "name": "Gonzino",
+      "count": 1
+    },
+    {
+      "name": "GAV Video",
+      "count": 1
+    },
+    {
+      "name": "Gosay Studio",
+      "count": 1
+    },
+    {
+      "name": "Grom",
+      "count": 1
+    },
+    {
+      "name": "Honoo",
+      "count": 1
+    },
+    {
+      "name": "Hei Chao Yinghua",
+      "count": 1
+    },
+    {
+      "name": "Hai An Xian Donghua Gongzuo Shi",
+      "count": 1
+    },
+    {
+      "name": "helo.inc",
+      "count": 1
+    },
+    {
+      "name": "Imagestone Inc.",
+      "count": 1
+    },
+    {
+      "name": "Imagica Digitalscape",
+      "count": 1
+    },
+    {
+      "name": "Ishibashi Planning",
+      "count": 1
+    },
+    {
+      "name": "IKK Room",
+      "count": 1
+    },
+    {
+      "name": "Imagica Imageworks",
+      "count": 1
+    },
+    {
+      "name": "J.K.I",
+      "count": 1
+    },
+    {
+      "name": "JOF",
+      "count": 1
+    },
+    {
+      "name": "Jichitai Anime",
+      "count": 1
+    },
+    {
+      "name": "JJJOY Animation Studios",
+      "count": 1
+    },
+    {
+      "name": "Kagome",
+      "count": 1
+    },
+    {
+      "name": "KaKa Technology Studio",
+      "count": 1
+    },
+    {
+      "name": "Kachigarasu",
+      "count": 1
+    },
+    {
+      "name": "K contents",
+      "count": 1
+    },
+    {
+      "name": "Kami Kukan",
+      "count": 1
+    },
+    {
+      "name": "Kyushu Network Animation",
+      "count": 1
+    },
+    {
+      "name": "Kent House",
+      "count": 1
+    },
+    {
+      "name": "Kigumi",
+      "count": 1
+    },
+    {
+      "name": "KKC Animation Production",
+      "count": 1
+    },
+    {
+      "name": "Kaca Entertainment",
+      "count": 1
+    },
+    {
+      "name": "Karasfilms",
+      "count": 1
+    },
+    {
+      "name": "Lan Ying Yingshi",
+      "count": 1
+    },
+    {
+      "name": "Liu Lin Yi Dongman",
+      "count": 1
+    },
+    {
+      "name": "Lead",
+      "count": 1
+    },
+    {
+      "name": "LEVELS",
+      "count": 1
+    },
+    {
+      "name": "Maru Animation",
+      "count": 1
+    },
+    {
+      "name": "Multi Access Company",
+      "count": 1
+    },
+    {
+      "name": "maroyaka",
+      "count": 1
+    },
+    {
+      "name": "Miki Production",
+      "count": 1
+    },
+    {
+      "name": "Mikimoto Production",
+      "count": 1
+    },
+    {
+      "name": "M&M",
+      "count": 1
+    },
+    {
+      "name": "MoMo Production",
+      "count": 1
+    },
+    {
+      "name": "Miyuki Production",
+      "count": 1
+    },
+    {
+      "name": "MI",
+      "count": 1
+    },
+    {
+      "name": "Magma Studio",
+      "count": 1
+    },
+    {
+      "name": "Marone",
+      "count": 1
+    },
+    {
+      "name": "MAT",
+      "count": 1
+    },
+    {
+      "name": "Mook DLE",
+      "count": 1
+    },
+    {
+      "name": "Mirai Fusion",
+      "count": 1
+    },
+    {
+      "name": "NEWON",
+      "count": 1
+    },
+    {
+      "name": "Nekonigashi Inc.",
+      "count": 1
+    },
+    {
+      "name": "nobishiro lab",
+      "count": 1
+    },
+    {
+      "name": "Network Kouenji Studio",
+      "count": 1
+    },
+    {
+      "name": "Nippon Ramayana Film Co.",
+      "count": 1
+    },
+    {
+      "name": "Nishiki Studio",
+      "count": 1
+    },
+    {
+      "name": "Next",
+      "count": 1
+    },
+    {
+      "name": "Psyde Kick Studio",
+      "count": 1
+    },
+    {
+      "name": "Project Team Muu",
+      "count": 1
+    },
+    {
+      "name": "Pink Cat",
+      "count": 1
+    },
+    {
+      "name": "Pak Production",
+      "count": 1
+    },
+    {
+      "name": "Potato House",
+      "count": 1
+    },
+    {
+      "name": "Planet Nemo Animation",
+      "count": 1
+    },
+    {
+      "name": "Poly Animation",
+      "count": 1
+    },
+    {
+      "name": "Picona",
+      "count": 1
+    },
+    {
+      "name": "Piko Studio",
+      "count": 1
+    },
+    {
+      "name": "PoPoCo",
+      "count": 1
+    },
+    {
+      "name": "QualiArts",
+      "count": 1
+    },
+    {
+      "name": "Raiose",
+      "count": 1
+    },
+    {
+      "name": "Reiki Eyes Animation",
+      "count": 1
+    },
+    {
+      "name": "Rankin/Bass Productions",
+      "count": 1
+    },
+    {
+      "name": "Studio Clutch",
+      "count": 1
+    },
+    {
+      "name": "Studio Dotou",
+      "count": 1
+    },
+    {
+      "name": "Studio Harutonari",
+      "count": 1
+    },
+    {
+      "name": "Skydance",
+      "count": 1
+    },
+    {
+      "name": "Saber Works",
+      "count": 1
+    },
+    {
+      "name": "soket",
+      "count": 1
+    },
+    {
+      "name": "Sasayuri",
+      "count": 1
+    },
+    {
+      "name": "Studio Add",
+      "count": 1
+    },
+    {
+      "name": "Studio Fusion",
+      "count": 1
+    },
+    {
+      "name": "Studio D-Volt",
+      "count": 1
+    },
+    {
+      "name": "Starlight Entertainment",
+      "count": 1
+    },
+    {
+      "name": "Studio Himalaya",
+      "count": 1
+    },
+    {
+      "name": "Shenfan Animation",
+      "count": 1
+    },
+    {
+      "name": "Studio Cats",
+      "count": 1
+    },
+    {
+      "name": "Studio B&M",
+      "count": 1
+    },
+    {
+      "name": "Studio Jin",
+      "count": 1
+    },
+    {
+      "name": "STUDIO6'oN",
+      "count": 1
+    },
+    {
+      "name": "Sumomo Film",
+      "count": 1
+    },
+    {
+      "name": "Studio Gadget",
+      "count": 1
+    },
+    {
+      "name": "studio hb",
+      "count": 1
+    },
+    {
+      "name": "Story Effect",
+      "count": 1
+    },
+    {
+      "name": "SJYNEXCUS",
+      "count": 1
+    },
+    {
+      "name": "Studio Guts",
+      "count": 1
+    },
+    {
+      "name": "Studio W.Baba",
+      "count": 1
+    },
+    {
+      "name": "Studio Hakk",
+      "count": 1
+    },
+    {
+      "name": "Studio CA",
+      "count": 1
+    },
+    {
+      "name": "Studio Khronos",
+      "count": 1
+    },
+    {
+      "name": "Studio Carbuncle",
+      "count": 1
+    },
+    {
+      "name": "Studio World",
+      "count": 1
+    },
+    {
+      "name": "Studio Z5",
+      "count": 1
+    },
+    {
+      "name": "Tang Cai Zhaopin",
+      "count": 1
+    },
+    {
+      "name": "The Gate Studio",
+      "count": 1
+    },
+    {
+      "name": "TanKong Pictures",
+      "count": 1
+    },
+    {
+      "name": "TypeZero",
+      "count": 1
+    },
+    {
+      "name": "TV Tokyo Communications",
+      "count": 1
+    },
+    {
+      "name": "Tsubo Production",
+      "count": 1
+    },
+    {
+      "name": "Twenty First",
+      "count": 1
+    },
+    {
+      "name": "TEC",
+      "count": 1
+    },
+    {
+      "name": "TiMi Studio Group",
+      "count": 1
+    },
+    {
+      "name": "The Monk Studios",
+      "count": 1
+    },
+    {
+      "name": "Ten Tails Animation",
+      "count": 1
+    },
+    {
+      "name": "Team TillDawn",
+      "count": 1
+    },
+    {
+      "name": "Twilight Studio",
+      "count": 1
+    },
+    {
+      "name": "Tsukimidou",
+      "count": 1
+    },
+    {
+      "name": "TOCSIS",
+      "count": 1
+    },
+    {
+      "name": "Visual Flight",
+      "count": 1
+    },
+    {
+      "name": "V-sign",
+      "count": 1
+    },
+    {
+      "name": "WonderLand",
+      "count": 1
+    },
+    {
+      "name": "Wang Film Productions",
+      "count": 1
+    },
+    {
+      "name": "Watanabe Promotion",
+      "count": 1
+    },
+    {
+      "name": "Winfuture Media",
+      "count": 1
+    },
+    {
+      "name": "Yumao Wenhua",
+      "count": 1
+    },
+    {
+      "name": "York Animation",
+      "count": 1
+    },
+    {
+      "name": "Youth Film Studio",
+      "count": 1
+    },
+    {
+      "name": "Yili Animation Studio",
+      "count": 1
+    },
+    {
+      "name": "Zhou Ling Wenhua",
+      "count": 1
+    },
+    {
+      "name": "Zhou Shen Studio",
+      "count": 1
+    },
+    {
+      "name": "Zoland Animation",
+      "count": 1
+    },
+    {
+      "name": "ZOOM ENTERPRISE",
+      "count": 1
+    },
+    {
+      "name": "Bianyue Culture",
+      "count": 0
+    },
+    {
+      "name": "Beijing Rocen Digital",
+      "count": 0
+    },
+    {
+      "name": "Chimu Jika Hatsuden",
+      "count": 0
+    },
+    {
+      "name": "Ezo Kobo",
+      "count": 0
+    },
+    {
+      "name": "Hanjin Animation",
+      "count": 0
+    },
+    {
+      "name": "Kinematics",
+      "count": 0
+    },
+    {
+      "name": "Original Dream",
+      "count": 0
+    },
+    {
+      "name": "Studio WHO",
+      "count": 0
+    }
+  ]
+}
