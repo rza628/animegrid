@@ -74,12 +74,70 @@ def getTop(n):
         time.sleep(0.75)
     return json.dumps(topN, indent=2)
 
- 
+def collectStats(data):
+
+    template = {"genres":{}, "themes":{}, "explicit_genres":{}, "demographics":{}, "studios":{}, "source":{}, "season":{} }
+    it = 0
+    for entry in data:
+        it += 1
+        id = entry['id']
+        url = f'https://api.jikan.moe/v4/anime/{id}'
+        response = requests.get(url)
+        res = response.json()
+        res = res["data"]
+        
+        if res['season'] not in template['season']:
+            template['season'][res['season']] = 1
+        else:
+            template['season'][res['season']] += 1
+
+        if res['source'] not in template['source']:
+            template['source'][res['source']] = 1
+        else:
+            template['source'][res['source']] += 1
+
+        for studio in res['studios']:
+            if studio['name'] not in template['studios']:
+                template['studios'][studio['name']] = 1
+            else:
+                 template['studios'][studio['name']] += 1
+
+        for genre in res['genres']:
+            if genre['name'] not in template['genres']:
+                template['genres'][genre['name']] = 1
+            else:
+                 template['genres'][genre['name']] += 1
+
+        for exGenre in res['explicit_genres']:
+            if exGenre['name'] not in template['explicit_genres']:
+                template['explicit_genres'][exGenre['name']] = 1
+            else:
+                 template['explicit_genres'][exGenre['name']] += 1
+
+        for theme in res['themes']:
+            if theme['name'] not in template['themes']:
+                template['themes'][theme['name']] = 1
+            else:
+                 template['themes'][theme['name']] += 1
+
+        for demo in res['demographics']:
+            if demo['name'] not in template['demographics']:
+                template['demographics'][demo['name']] = 1
+            else:
+                 template['demographics'][demo['name']] += 1
+    
+        time.sleep(0.75)
+        if it % 50 == 0:
+            print(template)
+    return template
+
 file = open('top1000.json', 'r', encoding=encoding)
+top1000 = json.load(file)['top1000']
+""" 
+res = collectStats(top1000)
+out = open('stats.json', 'w', encoding=encoding)
+json.dump(res, out, indent=2) """
 
-print(len(json.load(file)['top1000']))
 
-
-
-
+ 
  
