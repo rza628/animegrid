@@ -33,6 +33,7 @@
     bind:value={searchTerm}
     placeholder="Search Anime"
     oninput={() => debounce()}
+    autocomplete="off"
   />
 </form>
 <div class="suggestions">
