@@ -2,6 +2,7 @@ import requests
 import sys
 import time
 import json
+import random
 sys.stdout.reconfigure(encoding='utf-8')
 encoding = 'utf-8'
 def malapi():
@@ -131,13 +132,56 @@ def collectStats(data):
             print(template)
     return template
 
-file = open('top1000.json', 'r', encoding=encoding)
-top1000 = json.load(file)['top1000']
-""" 
-res = collectStats(top1000)
-out = open('stats.json', 'w', encoding=encoding)
-json.dump(res, out, indent=2) """
+file = open('stats.json', 'r', encoding=encoding)
+top1000 = json.load(file)
 
+# genres : 2415
+# themes : 1640
+# explicit_genres : 0
+# demographics : 516
+# studios : 1053
+# source : 1000
+# season : 1000
 
+sample = ['genres', 'themes', 'explicit_genres', 'demographics', 'studios', 'source']
+
+acrossProbs = [5, 2, 0, 1.5, 3, 3]
+chosen = random.choices(sample, weights=acrossProbs, k=3)
+cats = []
  
- 
+for choice in chosen:
+    probs =  top1000[choice].values()
+    randomChoice = random.choices(list(top1000[choice].keys()),weights=list(probs), k=1)[0]
+    cats.append({"type":choice, "category":randomChoice})
+print(cats)
+
+#doing down topics now
+downTopics = ["season", "Episodes", "Year", "Airing Status", "Mal Score", "Mal Rank"]
+chosen = random.choices(downTopics, k=3)
+downCats = []
+for choice in chosen:
+    randomChoice = None
+    if choice == "season":
+        randomChoice = random.choices(list(top1000['season'].keys()), weights=list(top1000['season'].values()), k=1)[0]
+        if randomChoice == None:
+            downCats.append({"type":"Any", "category":randomChoice})
+        else:
+            downCats.append({"type":choice, "category":randomChoice})
+    elif choice == "Episodes":
+        possibilities = ["<= 13", ">=13", ">=20", "50+"]
+        randomChoice = random.choices(possibilities, k=1)[0]
+    elif choice == "Year":
+        possibilities = ["1970 - 1985", "1985 - 1990", "1990 - 2000","2000 - 2005","2005 - 2010", "2015 - 2020", "2020 - 2025", "2025 - 2030"]
+        randomChoice = random.choices(possibilities, k=1)[0]
+    elif choice == "Airing Status":
+        possibilities = ["Finished Airing", "Currently Airing", "Not yet aired"]
+        randomChoice = random.choices(possibilities, k=1, weights=[5, 5, 2])[0]
+    elif choice == "Mal Score":
+        possibilities = [">=8.5", ">=8", ">=7.5", ">=7"]
+        randomChoice = random.choices(possibilities, k=1)[0]
+    elif choice == "Mal Rank":
+        possibilities = ["1 - 100", "101 - 200", "201 - 500", "501 - 1000"]
+        randomChoice = random.choices(possibilities, k=1)[0]
+    downCats.append({"type":choice, "category":randomChoice})
+
+print(downCats)
