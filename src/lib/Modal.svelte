@@ -9,8 +9,6 @@
   let dialog = $state(); // HTMLDialogElement
   let gameContext = getContext("gameContext");
 
-  console.time("test");
-
   const checkCat = $derived({
     1: [gameContext.categories[0], gameContext.categories[3]],
     2: [gameContext.categories[1], gameContext.categories[3]],
@@ -34,21 +32,24 @@
         `https://api.jikan.moe/v4/anime/${parseInt(guessID)}`
       );
       const data = await response.json();
-      const guessGenres = [
+      /* const guessGenres = [
         ...data["data"]["genres"],
         ...data["data"]["explicit_genres"],
         ...data["data"]["themes"],
         ...data["data"]["demographics"],
-      ].map((genre) => genre["name"]);
+      ].map((genre) => genre["name"]); */
 
-      console.log("tile num", checkCat);
+      /* console.log("tile num", checkCat); */
       const cat1 = checkCat[gridTile][0];
       const cat2 = checkCat[gridTile][1];
 
-      console.log("guess genres", guessGenres);
       console.log("categories", cat1, cat2);
+      console.log(data);
       //check the guess, correct, replace condition with true if want to test images
-      if (guessGenres.includes(cat1) && guessGenres.includes(cat2)) {
+      const check1 = await checkValid(cat1, data);
+      const check2 = await checkValid(cat2, data);
+      console.log(check1, check2);
+      if (check1 && check2) {
         gameContext.imageUrls[gridTile - 1] =
           data["data"]["images"]["webp"]["image_url"];
         gameContext.guessesLeft -= 1;
@@ -63,7 +64,65 @@
       console.log(e.message);
     }
   }
-  console.timeEnd("test");
+
+  async function checkValid(category, data) {
+    try {
+      const type = category["type"];
+      const catString = category["category"];
+      if (type === "genre") {
+        return data["data"]["genres"].some(
+          (entry) => entry["name"] === catString
+        );
+      } else if (type === "demographics") {
+        return data["data"]["demographics"].some(
+          (entry) => entry["name"] === catString
+        );
+      } else if (type === "studios") {
+        return data["data"]["demographics"].some(
+          (entry) => entry["name"] === catString
+        );
+      } else if (type === "source") {
+        return data["data"]["studios"].some(
+          (entry) => entry["name"] === catString
+        );
+      } else if (type === "Episodes") {
+        if (catString === "50+") {
+          const num = parseInt(catString.slice(0, 2));
+          return data["data"]["episodes"] >= num;
+        } else if (catString === "<=13") {
+          const num = parseInt(catString.slice(2, 4));
+          return data["data"]["episodes"] <= num;
+        } else if (catString === ">=13") {
+          const num = parseInt(catString.slice(2, 4));
+          return data["data"]["episodes"] >= num;
+        } else if (catString === ">=20") {
+          const num = parseInt(catString.slice(2, 4));
+          return data["data"]["episodes"] >= num;
+        }
+      } else if (type === "Year") {
+        const split = catString.split(" - ");
+        const year1 = split[0];
+        const year2 = split[1];
+        const startYear = data["data"]["prop"]["prop"]["year"];
+        return year1 <= startYear && startYear <= year2;
+      } else if (type === "Airing Status") {
+        return catString === data["data"]["status"];
+      } else if (type === "Mal Score") {
+        const score = parseFloat(catString.slice(2, catString.length));
+        return data["data"]["score"] >= score;
+      } else if (type === "Mal Rank") {
+        const split = catString.split(" - ");
+        const rank1 = split[0];
+        const rank2 = split[1];
+        const guessRank = data["data"]["rank"];
+        return rank1 <= guessRank && guessRank <= rank2;
+      }
+
+      return false;
+    } catch (e) {
+      console.error(e);
+    }
+  }
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->

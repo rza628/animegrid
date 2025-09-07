@@ -21,7 +21,6 @@
         `http://127.0.0.1:5000/api/search/${searchTerm.toLowerCase()}`
       );
       const data = await res.json();
-      console.log(data);
       filteredTitles = data["data"];
     }, 300);
   }

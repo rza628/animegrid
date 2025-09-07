@@ -143,9 +143,10 @@ top1000 = json.load(file)
 # source : 1000
 # season : 1000
 
-sample = ['genres', 'themes', 'explicit_genres', 'demographics', 'studios', 'source']
+# for now, removing 'themes', 'explicit_genres'
+sample = ['genres', 'demographics', 'studios', 'source']
 
-acrossProbs = [5, 2, 0, 1.5, 3, 3]
+acrossProbs = [6, 1.5, 2, 3]
 chosen = random.choices(sample, weights=acrossProbs, k=3)
 cats = []
  
@@ -156,26 +157,21 @@ for choice in chosen:
 print(cats)
 
 #doing down topics now
-downTopics = ["season", "Episodes", "Year", "Airing Status", "Mal Score", "Mal Rank"]
+downTopics = [ "Episodes", "Year", "Airing Status", "Mal Score", "Mal Rank"]
 chosen = random.choices(downTopics, k=3)
 downCats = []
 for choice in chosen:
     randomChoice = None
-    if choice == "season":
-        randomChoice = random.choices(list(top1000['season'].keys()), weights=list(top1000['season'].values()), k=1)[0]
-        if randomChoice == None:
-            downCats.append({"type":"Any", "category":randomChoice})
-        else:
-            downCats.append({"type":choice, "category":randomChoice})
-    elif choice == "Episodes":
-        possibilities = ["<= 13", ">=13", ">=20", "50+"]
+    if choice == "Episodes":
+        possibilities = ["<=13", ">=13", ">=20", "50+"]
         randomChoice = random.choices(possibilities, k=1)[0]
     elif choice == "Year":
         possibilities = ["1970 - 1985", "1985 - 1990", "1990 - 2000","2000 - 2005","2005 - 2010", "2015 - 2020", "2020 - 2025", "2025 - 2030"]
         randomChoice = random.choices(possibilities, k=1)[0]
     elif choice == "Airing Status":
-        possibilities = ["Finished Airing", "Currently Airing", "Not yet aired"]
-        randomChoice = random.choices(possibilities, k=1, weights=[5, 5, 2])[0]
+        # removed not yet aired option
+        possibilities = ["Finished Airing", "Currently Airing"]
+        randomChoice = random.choices(possibilities, k=1)[0]
     elif choice == "Mal Score":
         possibilities = [">=8.5", ">=8", ">=7.5", ">=7"]
         randomChoice = random.choices(possibilities, k=1)[0]
@@ -185,3 +181,10 @@ for choice in chosen:
     downCats.append({"type":choice, "category":randomChoice})
 
 print(downCats)
+
+"""     if choice == "season":
+        randomChoice = random.choices(list(top1000['season'].keys()), weights=list(top1000['season'].values()), k=1)[0]
+        if randomChoice == None:
+            downCats.append({"type":"Any", "category":randomChoice})
+        else:
+        downCats.append({"type":choice, "category":randomChoice}) """
