@@ -5,7 +5,6 @@
 
   let contextState = $state({ guessesLeft: 9, categories: [], imageUrls: [] });
   setContext("gameContext", contextState);
-  let gameContext = getContext("gameContext");
   onMount(async () => {
     try {
       const res2 = await fetch("http://127.0.0.1:5000/api/categories");
@@ -19,33 +18,36 @@
   });
 
   function handleReset() {
-    gameContext.guessesLeft = 9;
-    gameContext.imageUrls = [];
+    contextState.guessesLeft = 9;
+    contextState.imageUrls = [];
   }
 </script>
 
 <div class="container">
-  <div class="guess">
-    Guesses Left:
-    <p>{gameContext.guessesLeft}</p>
-  </div>
-  <button class="topTopic">{gameContext.categories[0]}</button>
-  <button class="topTopic">{gameContext.categories[1]}</button>
-  <button class="topTopic">{gameContext.categories[2]}</button>
-  <button class="downTopic">{gameContext.categories[3]}</button>
+  {#if contextState.categories.length >= 6}
+    <div class="guess">
+      Guesses Left:
+      <p>{contextState.guessesLeft}</p>
+    </div>
 
-  <Modal gridTile={1} />
-  <Modal gridTile={2} />
-  <Modal gridTile={3} />
+    <button class="topTopic">{contextState.categories[0]["category"]}</button>
+    <button class="topTopic">{contextState.categories[1]["category"]}</button>
+    <button class="topTopic">{contextState.categories[2]["category"]}</button>
+    <button class="downTopic">{contextState.categories[3]["category"]}</button>
 
-  <button class="downTopic">{gameContext.categories[4]}</button>
-  <Modal gridTile={4} />
-  <Modal gridTile={5} />
-  <Modal gridTile={6} />
-  <button class="downTopic">{gameContext.categories[5]}</button>
-  <Modal gridTile={7} />
-  <Modal gridTile={8} />
-  <Modal gridTile={9} />
+    <Modal gridTile={1} />
+    <Modal gridTile={2} />
+    <Modal gridTile={3} />
+
+    <button class="downTopic">{contextState.categories[4]["category"]}</button>
+    <Modal gridTile={4} />
+    <Modal gridTile={5} />
+    <Modal gridTile={6} />
+    <button class="downTopic">{contextState.categories[5]["category"]}</button>
+    <Modal gridTile={7} />
+    <Modal gridTile={8} />
+    <Modal gridTile={9} />
+  {/if}
 </div>
 
 <button class="reset" onclick={() => handleReset()}>Reset Game</button>
