@@ -1,13 +1,27 @@
 <script>
-  import { onMount, setContext, getContext } from "svelte";
+  import { onMount, setContext } from "svelte";
   import Modal from "./Modal.svelte";
+  import CategoryModal from "./CategoryModal.svelte";
   let errormessage = $state(null);
 
+  let categoryInfo = $state(null);
+  let showModal = $state(false);
+
+  const dateTimeString = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+    .format(new Date())
+    .replaceAll("/", "-");
+  console.log(dateTimeString);
   let contextState = $state({ guessesLeft: 9, categories: [], imageUrls: [] });
   setContext("gameContext", contextState);
   onMount(async () => {
     try {
-      const res2 = await fetch("http://127.0.0.1:5000/api/categories");
+      const res2 = await fetch(
+        `http://127.0.0.1:5000/api/categories/${dateTimeString}`
+      );
       const data2 = await res2.json();
 
       contextState.categories = data2["categories"];
@@ -21,7 +35,28 @@
     contextState.guessesLeft = 9;
     contextState.imageUrls = [];
   }
+
+  function setCatModal(tile) {
+    categoryInfo = contextState.categories[tile];
+    showModal = true;
+  }
 </script>
+
+{#snippet topCat(tile)}
+  {#if contextState.categories.length >= 6}
+    <button class="topTopic" onclick={() => setCatModal(tile)}
+      >{contextState.categories[tile]["category"]}</button
+    >
+  {/if}
+{/snippet}
+
+{#snippet downCat(tile)}
+  {#if contextState.categories.length >= 6}
+    <button class="downTopic" onclick={() => setCatModal(tile)}
+      >{contextState.categories[tile]["category"]}</button
+    >
+  {/if}
+{/snippet}
 
 <div class="container">
   {#if contextState.categories.length >= 6}
@@ -30,23 +65,29 @@
       <p>{contextState.guessesLeft}</p>
     </div>
 
-    <button class="topTopic">{contextState.categories[0]["category"]}</button>
-    <button class="topTopic">{contextState.categories[1]["category"]}</button>
-    <button class="topTopic">{contextState.categories[2]["category"]}</button>
-    <button class="downTopic">{contextState.categories[3]["category"]}</button>
+    {@render topCat(0)}
+    {@render topCat(1)}
+    {@render topCat(2)}
+
+    {@render downCat(3)}
 
     <Modal gridTile={1} />
     <Modal gridTile={2} />
     <Modal gridTile={3} />
 
-    <button class="downTopic">{contextState.categories[4]["category"]}</button>
+    {@render downCat(4)}
+
     <Modal gridTile={4} />
     <Modal gridTile={5} />
     <Modal gridTile={6} />
-    <button class="downTopic">{contextState.categories[5]["category"]}</button>
+
+    {@render downCat(5)}
+
     <Modal gridTile={7} />
     <Modal gridTile={8} />
     <Modal gridTile={9} />
+
+    <CategoryModal bind:showModal {categoryInfo} />
   {/if}
 </div>
 

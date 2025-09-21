@@ -33,8 +33,8 @@ def genres():
     except:
         return None
     
-@app.route("/api/categories")
-def categories():
+@app.route("/api/categories/<date>")
+def categories(date):
     #status, finished, airing, upcoming
     #got studios and split genres to genres, explicit, themes, demographics, used weighted random choice
     # also use rankings, and scores, rankings are based on anime score on mal
@@ -53,7 +53,7 @@ def categories():
     genres = [entry['name'] for entry in data]
 
     categories = random.sample(genres, 6) """
-    data = getRandCategories()
+    data = getRandCategories(date)
     # sample ["Action", "Romance", "Superpower", "Mystery", "Supernatural", "Comedy"]
     """ [{"type":"genre", "category":"Action"},{"type":"genre", "category":"Romance"}
                                            ,{"type":"genre", "category":"Superpower"},{"type":"genre", "category":"Mystery"},
@@ -61,14 +61,20 @@ def categories():
     message = json.jsonify({"categories": data})
     return message
 
-def getRandCategories():
+def getRandCategories(date):
+    random.seed(date)
     file = open('../stats.json', 'r', encoding='utf-8')
     top1000 = json.load(file)
 
-    sample = ['genres', 'demographics', 'studios', 'source']
+    #got rid of studios
+    sample = ['genres', 'demographics', 'source']
 
-    acrossProbs = [6, 1.5, 2, 3]
-    chosen = random.choices(sample, weights=acrossProbs, k=3)
+    acrossProbs = [6, 1.5, 3]
+    chosen = []
+    while len(chosen) < 3:
+        randChoice = random.choices(sample, weights=acrossProbs, k=1, )
+        if randChoice not in chosen:
+            chosen.append(randChoice[0])
     cats = []
     
     for choice in chosen:
@@ -76,9 +82,9 @@ def getRandCategories():
         randomChoice = random.choices(list(top1000[choice].keys()),weights=list(probs), k=1)[0]
         cats.append({"type":choice, "category":randomChoice})
 
-    #doing down topics now
-    downTopics = [ "Episodes", "Year", "Airing Status", "Mal Score", "Mal Rank"]
-    chosen = random.choices(downTopics, k=3)
+    #doing down topics now, got rid of Mal Rank
+    downTopics = [ "Episodes", "Year", "Airing Status", "Mal Score"]
+    chosen = random.sample(downTopics, k = 3)
     downCats = []
     for choice in chosen:
         randomChoice = None
@@ -95,9 +101,9 @@ def getRandCategories():
         elif choice == "Mal Score":
             possibilities = [">=8.5", ">=8", ">=7.5", ">=7"]
             randomChoice = random.choices(possibilities, k=1)[0]
-        elif choice == "Mal Rank":
+        """ elif choice == "Mal Rank":
             possibilities = ["1 - 100", "101 - 200", "201 - 500", "501 - 1000"]
-            randomChoice = random.choices(possibilities, k=1)[0]
+            randomChoice = random.choices(possibilities, k=1)[0] """
         downCats.append({"type":choice, "category":randomChoice})
 
     return cats + downCats
