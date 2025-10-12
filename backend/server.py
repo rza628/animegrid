@@ -55,9 +55,9 @@ def categories(date):
     categories = random.sample(genres, 6) """
     data = getRandCategories(date)
     # sample ["Action", "Romance", "Superpower", "Mystery", "Supernatural", "Comedy"]
-    """ [{"type":"genre", "category":"Action"},{"type":"genre", "category":"Romance"}
-                                           ,{"type":"genre", "category":"Superpower"},{"type":"genre", "category":"Mystery"},
-                                           {"type":"genre", "category":"Supernatural"},{"type":"genre", "category":"Comedy"}] """
+    # data = [{"type":"genres", "category":"Action"},{"type":"source", "category":"Manga"}
+    #                                        ,{"type":"demographics", "category":"Shounen"},{"type":"Year", "category":"2006 - 2010"},
+    #                                        {"type":"Episodes", "category":"<=13"},{"type":"Airing Status", "category":"Finished Airing"}]
     message = json.jsonify({"categories": data})
     return message
 
@@ -66,7 +66,7 @@ def getRandCategories(date):
     file = open('../stats.json', 'r', encoding='utf-8')
     top1000 = json.load(file)
 
-    #got rid of studios
+    #got rid of studios, themes, explicit, 
     sample = ['genres', 'demographics', 'source']
 
     acrossProbs = [6, 1.5, 3]
@@ -82,7 +82,7 @@ def getRandCategories(date):
         randomChoice = random.choices(list(top1000[choice].keys()),weights=list(probs), k=1)[0]
         cats.append({"type":choice, "category":randomChoice})
 
-    #doing down topics now, got rid of Mal Rank
+    #doing down topics now, got rid of Mal Rank, seasons
     downTopics = [ "Episodes", "Year", "Airing Status", "Mal Score"]
     chosen = random.sample(downTopics, k = 3)
     downCats = []
@@ -92,7 +92,7 @@ def getRandCategories(date):
             possibilities = ["<=13", ">=13", ">=20", "50+"]
             randomChoice = random.choices(possibilities, k=1)[0]
         elif choice == "Year":
-            possibilities = ["1970 - 1985", "1985 - 1990", "1990 - 2000","2000 - 2005","2005 - 2010", "2015 - 2020", "2020 - 2025", "2025 - 2030"]
+            possibilities = ["1970 - 1985", "1986 - 1990", "1991 - 2000","2001 - 2005","2006 - 2010", "2011 - 2015", "2016 - 2020", "2021 - 2025", "2026 - 2030"]
             randomChoice = random.choices(possibilities, k=1)[0]
         elif choice == "Airing Status":
             # removed not yet aired option
