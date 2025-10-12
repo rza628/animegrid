@@ -6,6 +6,7 @@
 
   let categoryInfo = $state(null);
   let showModal = $state(false);
+  let score = $state(0);
 
   const dateTimeString = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
@@ -15,7 +16,12 @@
     .format(new Date())
     .replaceAll("/", "-");
   console.log(dateTimeString);
-  let contextState = $state({ guessesLeft: 9, categories: [], imageUrls: [] });
+  let contextState = $state({
+    guessesLeft: 9,
+    categories: [],
+    imageUrls: [],
+    score: 0,
+  });
   setContext("gameContext", contextState);
   onMount(async () => {
     try {
@@ -34,6 +40,7 @@
   function handleReset() {
     contextState.guessesLeft = 9;
     contextState.imageUrls = [];
+    contextState.score = 0;
   }
 
   function setCatModal(tile) {
@@ -44,56 +51,95 @@
 
 {#snippet topCat(tile)}
   {#if contextState.categories.length >= 6}
-    <button class="topTopic" onclick={() => setCatModal(tile)}
-      >{contextState.categories[tile]["category"]}</button
-    >
+    <button class="topTopic" onclick={() => setCatModal(tile)}>
+      {#if contextState.categories[tile]["type"] === "genres"}
+        {`Genre:
+        `}
+      {/if}
+      {#if contextState.categories[tile]["type"] === "demographics"}
+        Demographic:
+      {/if}
+      {#if contextState.categories[tile]["type"] === "source"}
+        Source:
+      {/if}
+
+      {contextState.categories[tile]["category"]}
+    </button>
   {/if}
 {/snippet}
 
 {#snippet downCat(tile)}
   {#if contextState.categories.length >= 6}
-    <button class="downTopic" onclick={() => setCatModal(tile)}
-      >{contextState.categories[tile]["category"]}</button
-    >
+    <button class="downTopic" onclick={() => setCatModal(tile)}>
+      {#if contextState.categories[tile]["type"] === "Episodes"}
+        Number of Episodes:
+      {/if}
+      {#if contextState.categories[tile]["type"] === "Year"}
+        {`Started Airing In:
+        `}
+      {/if}
+      {#if contextState.categories[tile]["type"] === "Airing Status"}
+        Airing Status:
+      {/if}
+      {#if contextState.categories[tile]["type"] === "Mal Score"}
+        Mal Score:
+      {/if}
+      {contextState.categories[tile]["category"]}
+    </button>
   {/if}
 {/snippet}
+<div class="row">
+  <div class="container">
+    {#if contextState.categories.length >= 6}
+      <div class="guess">
+        Guesses Left:
+        <p>{contextState.guessesLeft}</p>
+      </div>
 
-<div class="container">
-  {#if contextState.categories.length >= 6}
-    <div class="guess">
-      Guesses Left:
-      <p>{contextState.guessesLeft}</p>
-    </div>
+      {@render topCat(0)}
+      {@render topCat(1)}
+      {@render topCat(2)}
 
-    {@render topCat(0)}
-    {@render topCat(1)}
-    {@render topCat(2)}
+      {@render downCat(3)}
 
-    {@render downCat(3)}
+      <Modal gridTile={1} />
+      <Modal gridTile={2} />
+      <Modal gridTile={3} />
 
-    <Modal gridTile={1} />
-    <Modal gridTile={2} />
-    <Modal gridTile={3} />
+      {@render downCat(4)}
 
-    {@render downCat(4)}
+      <Modal gridTile={4} />
+      <Modal gridTile={5} />
+      <Modal gridTile={6} />
 
-    <Modal gridTile={4} />
-    <Modal gridTile={5} />
-    <Modal gridTile={6} />
+      {@render downCat(5)}
 
-    {@render downCat(5)}
+      <Modal gridTile={7} />
+      <Modal gridTile={8} />
+      <Modal gridTile={9} />
 
-    <Modal gridTile={7} />
-    <Modal gridTile={8} />
-    <Modal gridTile={9} />
-
-    <CategoryModal bind:showModal {categoryInfo} />
-  {/if}
+      <CategoryModal bind:showModal {categoryInfo} />
+    {/if}
+  </div>
+  <div class="score">
+    Score:
+    <p>{contextState.score}</p>
+  </div>
 </div>
 
 <button class="reset" onclick={() => handleReset()}>Reset Game</button>
 
 <style>
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .score {
+    width: 100px;
+    margin-top: 160px;
+    height: 160px;
+  }
   .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -115,6 +161,8 @@
     border: none;
     outline: none;
     background: none;
+    text-wrap: pretty;
+    white-space: pre-line;
   }
   .downTopic {
     width: 100px;
@@ -127,6 +175,8 @@
     background: none;
     align-self: center;
     justify-self: baseline;
+    text-wrap: pretty;
+    white-space: pre-line;
   }
   .image {
     width: 100px;

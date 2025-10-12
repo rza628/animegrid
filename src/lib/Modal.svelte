@@ -54,6 +54,7 @@
           data["data"]["images"]["webp"]["image_url"];
         gameContext.guessesLeft -= 1;
         searchTerm = "";
+        gameContext.score += 100;
         dialog.close();
       } else {
         gameContext.guessesLeft -= 1;
