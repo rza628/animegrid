@@ -2,10 +2,12 @@
   import { onMount, setContext } from "svelte";
   import Modal from "./Modal.svelte";
   import CategoryModal from "./CategoryModal.svelte";
+  import EndModal from "./EndModal.svelte";
   let errormessage = $state(null);
 
   let categoryInfo = $state(null);
   let showModal = $state(false);
+  let endShowModal = $state(false);
   let score = $state(0);
 
   const dateTimeString = new Intl.DateTimeFormat("en-US", {
@@ -26,7 +28,7 @@
   onMount(async () => {
     try {
       const res2 = await fetch(
-        `http://127.0.0.1:5000/api/categories/${dateTimeString}`
+        `https://animegrid-backend-1.onrender.com/api/categories/${dateTimeString}`
       );
       const data2 = await res2.json();
 
@@ -37,10 +39,11 @@
     }
   });
 
-  function handleReset() {
+  function handleGiveUp() {
     contextState.guessesLeft = 9;
     contextState.imageUrls = [];
     contextState.score = 0;
+    endShowModal = true;
   }
 
   function setCatModal(tile) {
@@ -119,15 +122,15 @@
       <Modal gridTile={9} />
 
       <CategoryModal bind:showModal {categoryInfo} />
+      <EndModal bind:endShowModal />
     {/if}
   </div>
   <div class="score">
     Score:
     <p>{contextState.score}</p>
+    <button class="reset" onclick={() => handleGiveUp()}>Give Up</button>
   </div>
 </div>
-
-<button class="reset" onclick={() => handleReset()}>Reset Game</button>
 
 <style>
   .row {
@@ -189,8 +192,8 @@
     padding: 0;
   }
   .reset {
-    height: 75px;
-    width: 150px;
+    white-space: normal;
+    max-height: 40px;
   }
   p {
     font-size: xx-large;

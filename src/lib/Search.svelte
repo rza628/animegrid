@@ -18,7 +18,7 @@
     clearTimeout(timer);
     timer = setTimeout(async () => {
       const res = await fetch(
-        `http://127.0.0.1:5000/api/search/${searchTerm.toLowerCase()}`
+        `https://animegrid-backend-1.onrender.com/api/search/${searchTerm.toLowerCase()}`
       );
       const data = await res.json();
       filteredTitles = data["data"];
