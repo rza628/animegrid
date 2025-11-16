@@ -62,7 +62,7 @@
   <div>
     <div class="buttons">
       {@render info()}
-      <button onclick={() => dialog.close()} class="close">close modal</button>
+      <button onclick={() => dialog.close()} class="close">Close</button>
     </div>
   </div>
 </dialog>
