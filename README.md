@@ -2,9 +2,10 @@
 
 # How to run
 
-CURRENT VERSION : switched back to flask and frontend being separate, no longer reading csv from frontend, testing with only the first 2000 titles
+CURRENT VERSION : FASTAPI backend is deployed on Render, Svelte Frontend is deployed on CloudFlare Pages. All are on the Free Plan
 
-CURRENT VERSION : most up to date with no dupe titles, ids is in combined_anime_titles.csv
+FASTAPI URL: https://animegrid-backend-1.onrender.com
+CloudFlare Pages URL: animegrid.pages.dev
 
 go into python folder then run flask: flask --app server run
 do flask --app server --debug run so you wont have to close and rerun server

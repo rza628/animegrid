@@ -28,7 +28,7 @@
   onMount(async () => {
     try {
       const res2 = await fetch(
-        `https://animegrid-backend-1.onrender.com/api/categories/${dateTimeString}`
+        `${import.meta.env.VITE_FASTAPIBACKENDURL}/api/categories/${dateTimeString}`
       );
       const data2 = await res2.json();
 
