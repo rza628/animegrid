@@ -43,8 +43,6 @@
       const cat1 = checkCat[gridTile][0];
       const cat2 = checkCat[gridTile][1];
 
-      console.log("categories", cat1, cat2);
-      console.log(data);
       //check the guess, correct, replace condition with true if want to test images
       const check1 = await checkValid(cat1, data);
       const check2 = await checkValid(cat2, data);
@@ -70,7 +68,7 @@
     try {
       const type = category["type"];
       const catString = category["category"];
-      console.log(type, catString);
+
       if (type === "genres") {
         return data["data"]["genres"].some(
           (entry) => entry["name"] === catString
@@ -101,9 +99,9 @@
         }
       } else if (type === "Year") {
         const split = catString.split(" - ");
-        const year1 = split[0];
-        const year2 = split[1];
-        const startYear = data["data"]["prop"]["prop"]["year"];
+        const year1 = parseInt(split[0]);
+        const year2 = parseInt(split[1]);
+        const startYear = data["data"]["year"];
         return year1 <= startYear && startYear <= year2;
       } else if (type === "Airing Status") {
         return catString === data["data"]["status"];

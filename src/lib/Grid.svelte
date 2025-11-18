@@ -8,7 +8,6 @@
   let categoryInfo = $state(null);
   let showModal = $state(false);
   let endShowModal = $state(false);
-  let score = $state(0);
 
   const dateTimeString = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
@@ -17,7 +16,6 @@
   })
     .format(new Date())
     .replaceAll("/", "-");
-  console.log(dateTimeString);
   let contextState = $state({
     guessesLeft: 9,
     categories: [],
