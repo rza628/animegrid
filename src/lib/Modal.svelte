@@ -70,7 +70,8 @@
     try {
       const type = category["type"];
       const catString = category["category"];
-      if (type === "genre") {
+      console.log(type, catString);
+      if (type === "genres") {
         return data["data"]["genres"].some(
           (entry) => entry["name"] === catString
         );
@@ -79,13 +80,11 @@
           (entry) => entry["name"] === catString
         );
       } else if (type === "studios") {
-        return data["data"]["demographics"].some(
-          (entry) => entry["name"] === catString
-        );
-      } else if (type === "source") {
         return data["data"]["studios"].some(
           (entry) => entry["name"] === catString
         );
+      } else if (type === "source") {
+        return data["data"]["source"] == catString;
       } else if (type === "Episodes") {
         if (catString === "50+") {
           const num = parseInt(catString.slice(0, 2));
