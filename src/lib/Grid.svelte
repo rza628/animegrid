@@ -17,20 +17,42 @@
     .format(new Date())
     .replaceAll("/", "-");
   let contextState = $state({
+    dateTimeString: dateTimeString,
     guessesLeft: 9,
     categories: [],
-    imageUrls: [],
+    imageUrls: [null, null, null, null, null, null, null, null, null],
     score: 0,
+    end: false,
   });
   setContext("gameContext", contextState);
   onMount(async () => {
     try {
-      const res2 = await fetch(
-        `${import.meta.env.VITE_FASTAPIBACKENDURL}/api/categories/${dateTimeString}`
-      );
-      const data2 = await res2.json();
+      // check local storage if data alr exist by using date
+      // if yes, load local storage data into context state
+      const localGameData = localStorage.getItem(dateTimeString);
+      if (localGameData) {
+        // console.log("exists");
+        const parsedData = JSON.parse(localGameData);
+        contextState.guessesLeft = parsedData["guessesLeft"];
+        contextState.categories = parsedData["categories"];
+        contextState.imageUrls = parsedData["imageUrls"];
+        contextState.score = parsedData["score"];
+        contextState.end = parsedData["end"];
+      } else {
+        // console.log("api call made");
+        localStorage.clear();
+        const res = await fetch(
+          `${import.meta.env.VITE_FASTAPIBACKENDURL}/api/categories/${dateTimeString}`
+        );
+        const data = await res.json();
+        contextState.categories = data["categories"];
+        localStorage.setItem(dateTimeString, JSON.stringify(contextState));
+      }
+      //if no, do api fetch to get categories, make new localstorage and save to it, also clear localstorage to get rid of past game states
 
-      contextState.categories = data2["categories"];
+      // save to local storage and context state after every action : guessing,  give up, finish game etc
+
+      // contextState.categories = data2["categories"];
       // animeTitles = json["titles"]; // Jikan wraps the character in `data`
     } catch (e) {
       errormessage = e.message;
@@ -39,7 +61,17 @@
 
   function handleGiveUp() {
     contextState.guessesLeft = 9;
-    contextState.imageUrls = [];
+    contextState.imageUrls = [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ];
     contextState.score = 0;
     endShowModal = true;
   }

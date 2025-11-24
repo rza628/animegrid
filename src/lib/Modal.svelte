@@ -46,17 +46,25 @@
       //check the guess, correct, replace condition with true if want to test images
       const check1 = await checkValid(cat1, data);
       const check2 = await checkValid(cat2, data);
-      console.log(check1, check2);
+      // console.log(check1, check2);
       if (check1 && check2) {
         gameContext.imageUrls[gridTile - 1] =
           data["data"]["images"]["webp"]["image_url"];
         gameContext.guessesLeft -= 1;
         searchTerm = "";
         gameContext.score += 100;
+        localStorage.setItem(
+          gameContext.dateTimeString,
+          JSON.stringify(gameContext)
+        );
         dialog.close();
       } else {
         gameContext.guessesLeft -= 1;
         searchTerm = "";
+        localStorage.setItem(
+          gameContext.dateTimeString,
+          JSON.stringify(gameContext)
+        );
         dialog.close();
       }
     } catch (e) {
@@ -157,7 +165,7 @@
     </div>
     <div class="buttons">
       <button onclick={() => handleGuess()} class="submit">Submit Guess</button>
-      <button onclick={() => dialog.close()} class="close">close modal</button>
+      <button onclick={() => dialog.close()} class="close">Close</button>
     </div>
   </div>
 </dialog>
