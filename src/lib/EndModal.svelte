@@ -13,7 +13,6 @@
     if (endShowModal) dialog.showModal();
     if (gameContext !== null) {
       header = "Game Done";
-      desc = "Yeaaa";
     }
   });
 </script>
@@ -24,7 +23,10 @@
     <div class="infoBox">
       <div class="header">{header}</div>
 
-      <div class="description">{desc}</div>
+      <div class="description">
+        <!-- points on correct guess unused guesses -->
+        You earned {gameContext.score} points!
+      </div>
     </div>
   {/if}
 {/snippet}

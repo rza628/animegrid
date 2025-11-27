@@ -23,6 +23,8 @@
     imageUrls: [null, null, null, null, null, null, null, null, null],
     score: 0,
     end: false,
+    validGuess: 0,
+    wrongGuess: 0,
   });
   setContext("gameContext", contextState);
   onMount(async () => {
@@ -38,6 +40,8 @@
         contextState.imageUrls = parsedData["imageUrls"];
         contextState.score = parsedData["score"];
         contextState.end = parsedData["end"];
+        contextState.validGuess = parsedData["validGuess"];
+        contextState.wrongGuess = parsedData["wrongGuess"];
       } else {
         // console.log("api call made");
         localStorage.clear();
@@ -54,31 +58,24 @@
 
       // contextState.categories = data2["categories"];
       // animeTitles = json["titles"]; // Jikan wraps the character in `data`
+      if (contextState.end === true) {
+        endShowModal = true;
+      }
     } catch (e) {
       errormessage = e.message;
     }
   });
 
   function handleGiveUp() {
-    contextState.guessesLeft = 9;
-    contextState.imageUrls = [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-    ];
-    contextState.score = 0;
-    endShowModal = true;
+    localStorage.clear();
   }
 
   function setCatModal(tile) {
     categoryInfo = contextState.categories[tile];
     showModal = true;
+  }
+  function viewStats() {
+    endShowModal = true;
   }
 </script>
 
@@ -124,32 +121,37 @@
 <div class="row">
   <div class="container">
     {#if contextState.categories.length >= 6}
-      <div class="guess">
-        Guesses Left:
-        <p>{contextState.guessesLeft}</p>
-      </div>
-
+      {#if contextState.end}
+        <button class="viewStats" onclick={() => viewStats()}
+          >Game Done View Stats</button
+        >
+      {:else}
+        <div class="guess">
+          Guesses Left:
+          <p>{contextState.guessesLeft}</p>
+        </div>
+      {/if}
       {@render topCat(0)}
       {@render topCat(1)}
       {@render topCat(2)}
 
       {@render downCat(3)}
 
-      <Modal gridTile={1} />
-      <Modal gridTile={2} />
-      <Modal gridTile={3} />
+      <Modal gridTile={1} bind:endShowModal />
+      <Modal gridTile={2} bind:endShowModal />
+      <Modal gridTile={3} bind:endShowModal />
 
       {@render downCat(4)}
 
-      <Modal gridTile={4} />
-      <Modal gridTile={5} />
-      <Modal gridTile={6} />
+      <Modal gridTile={4} bind:endShowModal />
+      <Modal gridTile={5} bind:endShowModal />
+      <Modal gridTile={6} bind:endShowModal />
 
       {@render downCat(5)}
 
-      <Modal gridTile={7} />
-      <Modal gridTile={8} />
-      <Modal gridTile={9} />
+      <Modal gridTile={7} bind:endShowModal />
+      <Modal gridTile={8} bind:endShowModal />
+      <Modal gridTile={9} bind:endShowModal />
 
       <CategoryModal bind:showModal {categoryInfo} />
       <EndModal bind:endShowModal />
@@ -167,6 +169,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .viewStats {
+    width: 100px;
+    height: 160px;
+    background-color: transparent;
+    word-wrap: break-word;
+    padding: 0;
   }
   .score {
     width: 100px;

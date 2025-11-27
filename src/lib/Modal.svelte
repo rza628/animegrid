@@ -1,14 +1,14 @@
 <script>
   import { getContext } from "svelte";
   import Search from "./Search.svelte";
-  let { gridTile } = $props();
+  let { gridTile, endShowModal = $bindable() } = $props();
   let showModal = $state(false);
   let searchTerm = $state("");
   let guessID = $state("");
 
   let dialog = $state(); // HTMLDialogElement
   let gameContext = getContext("gameContext");
-
+  let endModal = getContext("endModal");
   const checkCat = $derived({
     1: [gameContext.categories[0], gameContext.categories[3]],
     2: [gameContext.categories[1], gameContext.categories[3]],
@@ -51,22 +51,24 @@
         gameContext.imageUrls[gridTile - 1] =
           data["data"]["images"]["webp"]["image_url"];
         gameContext.guessesLeft -= 1;
-        searchTerm = "";
         gameContext.score += 100;
-        localStorage.setItem(
-          gameContext.dateTimeString,
-          JSON.stringify(gameContext)
-        );
+        gameContext.validGuess += 1;
+        searchTerm = "";
         dialog.close();
       } else {
         gameContext.guessesLeft -= 1;
+        gameContext.wrongGuess += 1;
         searchTerm = "";
-        localStorage.setItem(
-          gameContext.dateTimeString,
-          JSON.stringify(gameContext)
-        );
         dialog.close();
       }
+      if (gameContext.guessesLeft === 0) {
+        gameContext.end = true;
+        endShowModal = true;
+      }
+      localStorage.setItem(
+        gameContext.dateTimeString,
+        JSON.stringify(gameContext)
+      );
     } catch (e) {
       console.log(e.message);
     }
@@ -138,6 +140,8 @@
     src={gameContext.imageUrls[gridTile - 1]}
     alt="Anime Thumbnail from myanimelist"
   />
+{:else if gameContext.end === true}
+  <div class="noClick" aria-label="Close"></div>
 {:else}
   <button
     class="gridTile"
@@ -175,6 +179,12 @@
     width: 100px;
     height: 160px;
     word-wrap: break-word;
+  }
+  .noClick {
+    width: 100px;
+    height: 160px;
+    background-color: rgb(222, 222, 222);
+    border-radius: 10px;
   }
   .image {
     width: 100px;
