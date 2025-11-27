@@ -67,7 +67,8 @@
   });
 
   function handleGiveUp() {
-    localStorage.clear();
+    endShowModal = true;
+    contextState.end = true;
   }
 
   function setCatModal(tile) {
