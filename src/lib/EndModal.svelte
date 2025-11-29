@@ -5,16 +5,33 @@
 
   let dialog = $state(); // HTMLDialogElement
 
+  let right = "☑️";
+  let wrong = "✖️";
+
   let header = $state("");
   let desc = $state("");
   let gameContext = getContext("gameContext");
-
+  let statsGrid = $derived.by(() => {
+    let string = "";
+    for (let i = 0; i < gameContext.imageUrls.length; i++) {
+      string += gameContext.imageUrls[i] === null ? wrong : right;
+      if ((i + 1) % 3 === 0) {
+        string += "\n";
+      }
+    }
+    return string;
+  });
   $effect(() => {
     if (endShowModal) dialog.showModal();
     if (gameContext !== null) {
       header = "Game Done";
     }
   });
+  function copyToClipBoard() {
+    let strLit = `${gameContext.dateTimeString} AnimeGrid
+${statsGrid}Scored ${gameContext.score} points`;
+    navigator.clipboard.writeText(strLit);
+  }
 </script>
 
 <!--  consider adding links to sites explaining terms like Shounen -->
@@ -26,6 +43,7 @@
       <div class="description">
         <!-- points on correct guess unused guesses -->
         You earned {gameContext.score} points!
+        {statsGrid}
       </div>
     </div>
   {/if}
@@ -42,6 +60,9 @@
   <div>
     <div class="buttons">
       {@render info()}
+      <button onclick={() => copyToClipBoard()} class="close"
+        >Copy To Share</button
+      >
       <button onclick={() => dialog.close()} class="close">Close</button>
     </div>
   </div>

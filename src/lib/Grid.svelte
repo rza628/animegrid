@@ -69,6 +69,7 @@
   function handleGiveUp() {
     endShowModal = true;
     contextState.end = true;
+    localStorage.setItem(dateTimeString, JSON.stringify(contextState));
   }
 
   function setCatModal(tile) {
