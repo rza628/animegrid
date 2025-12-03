@@ -10,6 +10,9 @@
 <!-- <footer>
   <h1 class="Footer">Ry Ly</h1>
 </footer> -->
+<head>
+  <title>AnimeGrid</title>
+</head>
 
 <div>
   <div class="top">
