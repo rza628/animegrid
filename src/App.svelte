@@ -10,13 +10,6 @@
 <!-- <footer>
   <h1 class="Footer">Ry Ly</h1>
 </footer> -->
-<head>
-  <title>AnimeGrid</title>
-  <!-- <meta
-    name="description"
-    content="Test your anime knowledge by guessing on a daily randomized grid of categories!"
-  /> -->
-</head>
 
 <div>
   <div class="top">
