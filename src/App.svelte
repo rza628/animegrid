@@ -12,10 +12,10 @@
 </footer> -->
 <head>
   <title>AnimeGrid</title>
-  <meta
+  <!-- <meta
     name="description"
     content="Test your anime knowledge by guessing on a daily randomized grid of categories!"
-  />
+  /> -->
 </head>
 
 <div>
