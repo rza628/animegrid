@@ -23,8 +23,8 @@
     imageUrls: [null, null, null, null, null, null, null, null, null],
     score: 0,
     end: false,
-    validGuess: 0,
-    wrongGuess: 0,
+    // validGuess: 0,
+    // wrongGuess: 0,
   });
   setContext("gameContext", contextState);
   onMount(async () => {
@@ -40,8 +40,8 @@
         contextState.imageUrls = parsedData["imageUrls"];
         contextState.score = parsedData["score"];
         contextState.end = parsedData["end"];
-        contextState.validGuess = parsedData["validGuess"];
-        contextState.wrongGuess = parsedData["wrongGuess"];
+        // contextState.validGuess = parsedData["validGuess"];
+        // contextState.wrongGuess = parsedData["wrongGuess"];
       } else {
         // console.log("api call made");
         localStorage.clear();
@@ -78,6 +78,27 @@
   }
   function viewStats() {
     endShowModal = true;
+  }
+  function handleReset() {
+    contextState.guessesLeft = 9;
+    contextState.imageUrls = [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ];
+    contextState.score = 0;
+    contextState.end = false;
+    localStorage.setItem(dateTimeString, JSON.stringify(contextState));
+  }
+  function handleInfGuesses() {
+    contextState.guessesLeft = Number.POSITIVE_INFINITY;
+    localStorage.setItem(dateTimeString, JSON.stringify(contextState));
   }
 </script>
 
@@ -123,16 +144,7 @@
 <div class="row">
   <div class="container">
     {#if contextState.categories.length >= 6}
-      {#if contextState.end}
-        <button class="viewStats" onclick={() => viewStats()}
-          >Game Done View Stats</button
-        >
-      {:else}
-        <div class="guess">
-          Guesses Left:
-          <p>{contextState.guessesLeft}</p>
-        </div>
-      {/if}
+      <div></div>
       {@render topCat(0)}
       {@render topCat(1)}
       {@render topCat(2)}
@@ -159,14 +171,34 @@
       <EndModal bind:endShowModal />
     {/if}
   </div>
-  <div class="score">
+  <!-- <div class="score">
     Score:
     <p>{contextState.score}</p>
+   
+  </div> -->
+  <div class="misc">
+    {#if contextState.end}
+      <button class="viewStats" onclick={() => viewStats()}>View Stats</button>
+    {:else}
+      <div class="guess">
+        Guesses Left:
+        <p>{contextState.guessesLeft}</p>
+      </div>
+    {/if}
     <button class="reset" onclick={() => handleGiveUp()}>Give Up</button>
+    <button class="reset" onclick={() => handleReset()}>Reset</button>
+    <button class="reset" onclick={() => handleInfGuesses()}
+      >Infinite Guesses</button
+    >
   </div>
 </div>
 
 <style>
+  .reset {
+    white-space: normal;
+    max-height: 50px;
+    padding: 5px;
+  }
   .row {
     display: flex;
     justify-content: center;
@@ -179,10 +211,11 @@
     word-wrap: break-word;
     padding: 0;
   }
-  .score {
+  .misc {
     width: 100px;
     margin-top: 160px;
     height: 160px;
+    margin-left: 5px;
   }
   .container {
     display: grid;
@@ -190,12 +223,13 @@
     grid-template-rows: repeat(4, 1fr);
     align-items: end;
     justify-items: center;
-    gap: 1px;
+    /* gap: 1px; */
   }
   button {
     width: 100px;
     height: 160px;
     word-wrap: break-word;
+    border-radius: 0;
   }
   .topTopic {
     width: 100px;
@@ -226,15 +260,12 @@
     width: 100px;
     height: 160px;
     text-align: center;
-    border-radius: 8px;
+    /* border-radius: 8px; */
   }
   .guess {
     width: 100px;
+    height: 160px;
     padding: 0;
-  }
-  .reset {
-    white-space: normal;
-    max-height: 40px;
   }
   p {
     font-size: xx-large;

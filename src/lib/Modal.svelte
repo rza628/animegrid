@@ -43,23 +43,34 @@
       const cat1 = checkCat[gridTile][0];
       const cat2 = checkCat[gridTile][1];
 
-      //check the guess, correct, replace condition with true if want to test images
-      const check1 = await checkValid(cat1, data);
-      const check2 = await checkValid(cat2, data);
-      // console.log(check1, check2);
-      if (check1 && check2) {
-        gameContext.imageUrls[gridTile - 1] =
-          data["data"]["images"]["webp"]["image_url"];
+      // check if anime was already guessed, unique guesses only
+      if (
+        gameContext.imageUrls.includes(
+          data["data"]["images"]["webp"]["image_url"]
+        )
+      ) {
         gameContext.guessesLeft -= 1;
-        gameContext.score += 100;
-        gameContext.validGuess += 1;
         searchTerm = "";
         dialog.close();
       } else {
-        gameContext.guessesLeft -= 1;
-        gameContext.wrongGuess += 1;
-        searchTerm = "";
-        dialog.close();
+        //check the guess, correct, replace condition with true if want to test images
+        const check1 = await checkValid(cat1, data);
+        const check2 = await checkValid(cat2, data);
+        // console.log(check1, check2);
+        if (check1 && check2) {
+          gameContext.imageUrls[gridTile - 1] =
+            data["data"]["images"]["webp"]["image_url"];
+          gameContext.guessesLeft -= 1;
+          gameContext.score += 100;
+          // gameContext.validGuess += 1;
+          searchTerm = "";
+          dialog.close();
+        } else {
+          gameContext.guessesLeft -= 1;
+          // gameContext.wrongGuess += 1;
+          searchTerm = "";
+          dialog.close();
+        }
       }
       if (gameContext.guessesLeft === 0) {
         gameContext.end = true;
@@ -179,25 +190,25 @@
     width: 100px;
     height: 160px;
     word-wrap: break-word;
+    border-radius: 0;
+    outline: solid bisque;
   }
   .noClick {
     width: 100px;
     height: 160px;
     background-color: rgb(222, 222, 222);
-    border-radius: 10px;
   }
   .image {
     width: 100px;
     height: 160px;
     text-align: center;
-    border-radius: 8px;
   }
   .buttons {
     display: flex;
     flex: 1;
     justify-content: space-between;
     align-content: center;
-    gap: 20px;
+    /* gap: 20px; */
     padding-top: 10px;
   }
   dialog {

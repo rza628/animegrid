@@ -15,13 +15,16 @@
   <div class="top">
     <Header />
   </div>
-  <div>
+  <div class="grid">
     <!-- <Grid /> -->
     <Grid />
   </div>
 </div>
 
 <style>
+  .grid {
+    margin-bottom: 200px;
+  }
   .top {
     position: absolute;
     top: 0;
